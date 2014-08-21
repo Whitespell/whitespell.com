@@ -1,0 +1,63 @@
+.pricing-tables {
+
+	width: 100%;
+	overflow: hidden;
+	padding-top: $margin-m;
+
+	article {
+
+		max-width: 300px;
+		min-height: 550px;
+
+		position: relative;
+
+		margin-right: $margin-s;
+		margin-bottom: $margin-m;
+
+		float: left;
+		text-align: center;
+
+		border: $border-style $border-width $grey;
+
+		&.featured {
+			//font-size: $size-l;
+			border-color: $accent-alt;
+
+			h3 {
+				color: $accent-alt;
+			}
+
+			.price {
+				background-color: $accent-alt;
+			}
+		}
+
+		.wrapper {
+			padding: $padding-l;
+		}
+
+		h3,h4 {
+			margin: 0;
+		}
+
+		.price {
+			padding: 10px 0;
+			color: $white;
+			background: $accent;
+		}
+
+		ul {
+			text-align: left;
+			margin: 0;
+		}
+
+		a.btn {
+			width: 100%;
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+		}
+
+	}
+
+}
