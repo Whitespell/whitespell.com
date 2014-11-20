@@ -1,0 +1,204 @@
+//TABLET AND DOWN
+@media all and (max-width: 960px){
+
+	//PRICING TABLES
+	.pricing-tables article {
+		max-width: initial;
+	}
+
+}
+
+//TABLET ONLY
+@media all and (min-width: 767px) and (max-width: 960px){
+
+	//THEME
+	.container {
+		width: 738px;
+	}
+
+	//PRICING TABLES
+	.pricing-tables article {
+		width: 48.62%;
+	}
+
+	//COLUMNS
+	.column {
+		&.three-fourth {
+			@include column(12);
+		}
+
+		&.one-fourth {
+			@include column(6);
+		}
+	}
+
+}
+
+//MOBILE ONLY
+@media all and (max-width: 767px){
+
+	//THEME
+	.container {
+		width: 100%;
+		padding: 0 $margin-m;
+		overflow: hidden;
+	}
+
+	//TYPOGRAPHY
+	h1, h2, h3, h4, h5, h6 {
+		&.inline {
+			margin-bottom: $margin-m;
+		}
+	}
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h2 {
+		font-size: 2.2em;
+	}
+
+	h3 {
+		font-size: 1.9em;
+	}
+
+	h4 {
+		font-size: 1.6em;
+	}
+
+	h5 {
+		font-size: 1.3em;
+	}
+
+	h6 {
+		font-size: 1.2em;
+	}
+
+	//SECTION
+	.section {
+		&.header-push {
+			margin-top: $header-height+$margin-m;
+		}
+	}
+
+	//COLUMNS
+	.column {
+		margin-bottom: $margin-m;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.half,&.one-fourth,&.three-fourth {
+			@include column(12);
+		}
+	}
+
+	//HEADER
+	header#header {
+
+		a.btn {
+			float: right;
+			margin-top: 8px;
+			display: inline-block;
+		}
+
+		nav {
+			width: 100%;
+			background: $grey;
+			text-align: center;
+
+			ul {
+				margin: 0;
+
+				li {
+					width: 100%;
+					margin: 0;
+					padding: $margin-s 0;
+					display: block;
+
+					&.active {
+						color: $white;
+						background: $accent;
+					}
+				}
+			}
+
+			&.hidden {
+				display: none;
+			}
+		}
+	}
+
+	//PRICING TABLES
+	.pricing-tables article {
+		min-height: initial;
+
+		margin-right: 0;
+		margin-left: 0;
+		width: 100%;
+
+		ul {
+			margin-bottom: $margin-l;
+		}
+	}
+
+	//DOCS
+	.docs {
+		.nav-trigger {
+			font-size: $size-s;
+			display: block;
+
+			position: fixed;
+			right: $margin-m;
+			top: $header-height+$margin-m;
+
+			padding: $padding-m;
+			color: $base-color;
+			border: $border-style $border-width $grey;
+			background: $bg-color;
+
+			span {
+				position: relative;
+				top: 2px;
+				margin-right: $margin-xs;
+			}
+		}
+
+		nav.column {
+			margin: 0;
+			width: 300px;
+
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+
+			padding-left: $margin-m;
+			padding-top: $header-height+$margin-m;
+
+			overflow-y: scroll;
+
+			@include transition(left);
+
+			&.hidden {
+				left: -300px;
+			}
+		}
+	}
+
+	//BLOG
+	.blog-post {
+		.container {
+			width: 100%;
+		}
+
+		header .icon {
+			float: none;
+			margin-bottom: $margin-s;
+			margin-right: 0;
+		}
+	}
+
+}
