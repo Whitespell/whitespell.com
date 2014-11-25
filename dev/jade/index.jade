@@ -1,10 +1,10 @@
 include ./inc/header.jade
 
-section.section.header-push.intro
+section.section.home-intro
   .container
-    article.column.half
-      h2.accent Whitespell
-      h3.h4.accent-alt Your new superpowered workflow
+    article.column.half.content
+      h2 Whitespell
+      h3.h4.alt Worlds first intelligent & distributed API
       ul.usp
         li
           span.ss-icon.ss-standard check
@@ -18,46 +18,51 @@ section.section.header-push.intro
         li
           span.ss-icon.ss-standard check
           | A lot more (including open source libraries!)
-      a.btn(href='/docs/getting-started') Start buidling
+      a.btn(href='./producs.html') Find out more
 
-section.section.bordered
+    article.column.half
+      .character
+        img(src="assets/img/character.png")
+
+section.section.accent-alt.no-clear
   .container
-    article.column
-      article.column.half
-        h3.h4.accent-alt Why its awesome for you
-        ul.usp
-          li
-            span.ss-icon.ss-standard check
-            | Reduces loading time by at least 60%
-          li
-            span.ss-icon.ss-standard check
-            | No more setting-up back and front-end infrastructures
-          li
-            span.ss-icon.ss-standard check
-            | Collaborate, manage and deploy easily from our cloud panel
-          li
-            span.ss-icon.ss-standard check
-            | One-click intigrate and trade code on our marketplace
+    article.column.half
+      h3.h4 Why its awesome for you
+      ul.usp
+        li
+          span.ss-icon.ss-standard check
+          | 5 minute setup
+        li
+          span.ss-icon.ss-standard check
+          | No more setting-up back infrastructures
+        li
+          span.ss-icon.ss-standard check
+          | Reduces average loading time by at least 60%
+        li
+          span.ss-icon.ss-standard check
+          | Collaborate, manage and deploy easily using our cloud panel or CLI
+      a.btn.alt(href="./sign-up.html") Try it now
+    article.column.half.illustration
+      span.ss-icon.ss-standard database
 
-      article.column.half
-        p Hi
+        
 
-section.section.bordered
+section.section.accent.no-clear
   .container
-    article.column
-      article.column.half
-        p Hi there
-      article.column.half
-        h3.h4.accent-alt Why its awesome for your business
-        ul.usp
-          li
-            span.ss-icon.ss-standard check
-            | Premium plans that allow you to scale as you grow
-          li
-            span.ss-icon.ss-standard check
-            | Get automatic mail updates about app data
-          li
-            span.ss-icon.ss-standard check
-            | Integrated monetization and customer support options
+    article.column.half
+      h3.h4 Why its awesome for your business
+      ul.usp
+        li
+          span.ss-icon.ss-standard check
+          | Premium plans that allow you to scale as you grow
+        li
+          span.ss-icon.ss-standard check
+          | Get automatic mail updates about app data
+        li
+          span.ss-icon.ss-standard check
+          | Integrated monetization and customer support options
+      a.btn(href="./pricing.html") View our premium plans
+    article.column.half.illustration
+      span.ss-icon.ss-standard barchart
 
 include ./inc/footer.jade

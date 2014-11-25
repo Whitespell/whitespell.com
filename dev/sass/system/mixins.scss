@@ -1,15 +1,39 @@
-@mixin transition($property, $duration:$transition-duration, $timing:$transition-timing){
-	-webkit-transition: $property $duration $timing;
-	-moz-transition: $property $duration $timing;
-	-o-transition: $property $duration $timing;
-	transition: $property $duration $timing;
+//Border
+@mixin border($side:false, $color:$grey, $width:$border-width){
+  @if $side {
+    border-#{$side}: $border-style $width $color;
+  } @else {
+    border: $border-style $width $color;
+  }
 }
 
+//Reset text color
+@mixin reset-text-color($color:$white){
+	color: $color;
+
+	h1,h2,h3,h4,h5,h6,a,
+	ul.usp li .ss-icon {
+		color: $color;
+	}
+}
+
+//Prefix property
+@mixin prefix($property, $value){
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-o-#{$property}: $value;
+	-ms-#{$property}: $value;
+	#{$property}: $value;
+}
+
+//Transition
+@mixin transition($property, $duration:$transition-duration, $timing:$transition-timing,  $delay:0s){
+	@include prefix(transition, $property $duration $timing $delay);
+}
+
+//Animations
 @mixin animation($name, $seconds, $delay:0s){
-	-webkit-animation: $name $seconds infinite alternate $delay;
-	-moz-animation: $name $seconds infinite alternate $delay;
-	-o-animation: $name $seconds infinite alternate $delay;
-	animation: $name $seconds infinite alternate $delay;
+	@include prefix(animation, $name $seconds infinite alternate $delay);
 }
 
 @mixin keyframes($name){
@@ -27,10 +51,7 @@
 	}
 }
 
+//Transforms
 @mixin transform($value){
-	transform: $value;
-	-ms-transform: $value;
-	-webkit-transform: $value;
-	-o-transform: $value;
-	-moz-transform: $value;
+	@include prefix(transform, $value);
 }

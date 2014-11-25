@@ -8,26 +8,18 @@
 	background: $accent;
 }
 
-h1,h2,h3,h4,h5,h6,p,img,ul,ol,pre {
-	margin-bottom: $margin-m;
+p,img,ul,ol,pre {
+	margin-bottom: $margin-l;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
 	font-weight: $main-weight;
-	line-height: $line-height-alt;
+	line-height: $heading-line-height;
+	margin-bottom: $margin-m;
+	color: $accent;
 
-	&.accent {
-		color: $accent;
-	}
-
-	&.accent-alt {
+	&.alt {
 		color: $accent-alt;
-	}
-
-	&.inline {
-		margin-bottom: 0;
-		margin-right: $margin-l;
-		display: inline-block;
 	}
 }
 
@@ -55,30 +47,16 @@ h6,.h6 {
 	font-size: 1.2em;
 }
 
-p {
-	overflow: hidden;
-	color: $base-color;
-}
-
 a {
 	color: $accent;
 	text-decoration: none;
-}
-
-blockquote {
-	margin-bottom: $margin-m;
-	font-style: italic;
-	color: $accent-alt;
-	padding: $padding-m;
-	padding-left: $margin-l;
-	border-left: $border-style $border-width-alt $accent-alt;
 }
 
 pre {
 	font-family: 'meslo_lg_l_dzregular';
 	padding: $padding-m;
 	padding-left: $margin-l;
-	border-left: $border-style $border-width-alt $accent;
+	@include border(left, $accent-alt);
 }
 
 b {
@@ -87,7 +65,7 @@ b {
 
 u {
 	text-decoration: none;
-	border-bottom: $border-style $border-width $base-color;
+	@include border(bottom);
 }
 
 small {
@@ -100,19 +78,18 @@ input[type='submit'] {
 	font-weight: $main-weight;
 
 	display: inline-block;
-	margin-right: $margin-s;
 
 	color: $white;
-	background: $accent;
+	background-color: $accent;
 	border: none;
-	border: $border-style $border-width $accent-dark;
+	@include border(false, $accent-dark);
 	border-radius: $border-radius;
 
 	padding: $padding-m;
 
 	cursor: pointer;
 
-	@include transition(border-width, $transition-duration-alt);
+	@include transition(background-color, $transition-duration-alt);
 
 	&.alt {
 		background: $accent-alt;
@@ -123,16 +100,8 @@ input[type='submit'] {
 		}
 	}
 
-	&:last-child {
-		margin-right: 0;
-	}
-
 	&:hover {
-		background: $accent-hover;
-	}
-
-	&:active {
-		border-width: 1px;
+		background-color: $accent-hover;
 	}
 }
 
@@ -149,7 +118,7 @@ ul, ol {
 	> ul,ol {
 		li {
 			padding-left: $margin-m;
-			border-left: $border-style $border-width $grey;
+			@include border(left);
 
 			&.active {
 				color: $accent-alt;
@@ -171,25 +140,17 @@ ul {
 			width: 5px;
 			height: 5px;
 
-			background: $accent;
+			background-color: $accent;
 
 			float: left;
 			margin: $size-m/2+3 $size-s 0 0;
 		}
 	}
 
-	&.no-bullets {
-		li {
-			&:before {
-				display: none;
-			}
-		}
-	}
-
 	&.inline {
 		li {
 			display: inline;
-			margin-right: $margin-s;
+			margin-right: $margin-m;
 
 			&:before {
 				display: none;

@@ -17,7 +17,7 @@
 		float: left;
 		text-align: center;
 
-		border: $border-style $border-width $grey;
+		@include border();
 
 		&.featured {
 			//font-size: $size-l;

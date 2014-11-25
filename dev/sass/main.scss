@@ -13,15 +13,14 @@
 
 
 //ELEMENTS
+@import "elements/sections";
+@import "elements/column";
+
 @import "elements/forms";
-
 @import "elements/header-footer";
-
 @import "elements/pricing-tables";
-
-@import "elements/docs";
-
-@import "elements/blog";
+@import "elements/home-intro";
+@import "elements/ws-loader";
 
 
 //MEDIA

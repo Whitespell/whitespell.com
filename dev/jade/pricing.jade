@@ -1,55 +1,59 @@
 include ./inc/header.jade
 
-section.section.header-push
+section.section.page-title
   .container
-    h2.accent Our Plans
-    h3.h4.accent-alt We got what you need
-    section.pricing-tables
+    article.column.half
+      h2 Our Plans
+      h3.h4 Tell us what you need
+    article.column.half.illustration
+      span.ss-icon.ss-standard barchart
 
-      article.featured
-        .wrapper
-          h3.accent Free
-        .price free
-        .wrapper
-          ul.no-bullets
-            li
-              b 150 Intelligence Connections
-              | /hour
-            li
-              b 1 Total Dynagram Emails
-              | /day for all users
-            li
-              b 2 Visualizations
-            li
-              b 2 Included Team Size
-            li
-              b 500 Blox Calls
-              | per hour (Library/HTTP)
-            li
-              b No Marketplace Credit
-        a.btn.alt(href='#') Sign up
+section.section.pricing-tables
+  .container
+    article.featured
+      .wrapper
+        h3 Free
+      .price free
+      .wrapper
+        ul.no-bullets
+          li
+            b 150 Intelligence Connections
+            | /hour
+          li
+            b 1 Total Dynagram Emails
+            | /day for all users
+          li
+            b 2 Visualizations
+          li
+            b 2 Included Team Size
+          li
+            b 500 Blox Calls
+            | per hour (Library/HTTP)
+          li
+            b No Marketplace Credit
+      a.btn.alt(href='#') Sign up
 
-      article
-        .wrapper
-          h3.accent Simple
-        .price $40 p/m
-        .wrapper
-          ul.no-bullets
-            li
-              b 150 Intelligence Connections
-              | /hour
-            li
-              b 1 Total Dynagram Emails
-              | /day for all users
-            li
-              b 2 Visualizations
-            li
-              b 2 Included Team Size
-            li
-              b 500 Blox Calls
-              | per hour (Library/HTTP)
-            li
-              b No Marketplace Credit
-        a.btn(href='#') Sign up
+    article
+      .wrapper
+        h3 Simple
+      .price $40 p/m
+      .wrapper
+        ul.no-bullets
+          li
+            b 150 Intelligence Connections
+            | /hour
+          li
+            b 1 Total Dynagram Emails
+            | /day for all users
+          li
+            b 2 Visualizations
+          li
+            b 2 Included Team Size
+          li
+            b 500 Blox Calls
+            | per hour (Library/HTTP)
+          li
+            b No Marketplace Credit
+      a.btn(href='#') Sign up
 
 include ./inc/footer.jade

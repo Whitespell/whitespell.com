@@ -1,0 +1,69 @@
+.section {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: $margin-xl;
+
+	.container {
+		overflow: visible;
+	}
+
+	.column.illustration {
+		font-size: 25em;
+		color: $accent-hover;
+		margin-bottom: -25em;
+		text-align: center;
+	}
+
+	&.no-clear {
+		margin-bottom: 0;
+	}
+
+	&.page-title {
+		@include reset-text-color();
+		padding-bottom: $margin-l;
+		padding-top: $margin-l;
+
+		.illustration {
+			position: relative;
+			font-size: 15em;
+			margin-bottom: -15em;
+			top: -40px;
+		}
+	}
+
+	&.accent,&.accent-alt {
+		padding: $margin-xl 0;
+
+		@include reset-text-color();
+
+		a.btn {
+			background-color: $accent-hover;
+
+			&:hover {
+				background-color: $accent-dark;
+			}
+
+			&.alt {
+				background-color: $accent-alt-hover;
+
+				&:hover {
+					background-color: $accent-alt-dark;
+				}
+			}
+		}
+	}
+
+	&.accent {
+		background-color: $accent;
+		.illustration {
+			color: $accent-hover;
+		}
+	}
+
+	&.page-title,&.accent-alt {
+		background-color: $accent-alt;
+		.illustration {
+			color: $accent-alt-hover;
+		}
+	}
+}

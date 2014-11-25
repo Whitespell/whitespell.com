@@ -1,10 +1,10 @@
 header#header {
 	width: 100%;
 	padding: $margin-m 0;
-	margin-bottom: $margin-l;
 
-	background: $bg-color;
-	border-top: $border-style $border-width $accent;
+	background-color: $accent;
+	color: $white;
+	@include border(bottom, $accent-dark, $border-width-alt);
 
 	h1 {
 		width: 70px;
@@ -17,13 +17,13 @@ header#header {
 		}
 	}
 
-	a.btn {
-		display: none;
-	}
-
 	nav {
-		margin-top: 15px;
+		margin-top: 3px;
 		float: right;
+
+		.btn {
+			margin-left: $margin-s;
+		}
 
 		ul {
 			margin: 0;
@@ -38,7 +38,7 @@ header#header {
 			}
 
 			a {
-				color: $base-color;
+				color: $white;
 
 				&:last-child li {
 					margin: 0;
@@ -50,24 +50,24 @@ header#header {
 
 footer#footer {
 	font-size: $size-s;
-	color: $accent-alt;
 	text-align: center;
-	margin: $margin-xl 0 $margin-m 0;
+	margin-bottom: $margin-m;
+	padding-top: $margin-l;
+	@include border(top);
 
 	a {
 		color: $accent-alt;
 	}
 
-	p {
-		margin: 0;
-		margin-right: $margin-s;
-		display: inline;
-		color: $accent-alt;
-	}
-
 	ul {
-		display: inline-block;
+		display: block;
 		margin: 0;
-		margin-left: $margin-s;
+		margin-bottom: $margin-s;
+		float: left;
+
+		&:last-child {
+			float: right;
+			margin-bottom: 0;
+		}
 	}
 }

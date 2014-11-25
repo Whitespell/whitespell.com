@@ -1,12 +1,9 @@
-
-$main-container-width: 960px;
+$main-container-width: 1024px;
 
 
 //COLORS
-$bg-color: #f5f5f5;
-
 $base-color: #484848;
-$white: #fff;
+$white: #f5f5f5;
 
 $accent: darken(#3796cf, 5%);
 $accent-dark: darken($accent, 10%);
@@ -26,11 +23,10 @@ $main-weight: 300;
 $bold-weight: 500;
 
 $line-height: 1.5em;
-$line-height-alt: 1.2em;
+$heading-line-height: 1.2em;
 
 $size-s: 0.9em;
 $size-m: 16px;
-$size-l: 1.1em;
 
 
 //SPACING
@@ -48,14 +44,10 @@ $padding-l: $margin-m+10px $margin-l;
 $border-style: solid;
 $border-width: 1px;
 $border-width-alt: 2px;
-$border-radius: 0;
+$border-radius: 2px;
 
 
 //ANIMATIONS
 $transition-duration: .3s;
 $transition-duration-alt: .1s;
 $transition-timing: ease;
-
-
-//ELEMENTS
-$header-height: 84px;
