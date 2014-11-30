@@ -3,6 +3,7 @@ $main-container-width: 1024px;
 
 //COLORS
 $base-color: #484848;
+$base-color-dark: darken($base-color, 10%);
 $white: #f5f5f5;
 
 $accent: darken(#3796cf, 5%);

@@ -1,0 +1,73 @@
+include ./inc/header.jade
+
+section.section.page-title
+  .container
+    article.column.half
+      h2 Features
+      h3.h4 Tell us what you need
+    article.column.half.illustration
+      span.ss-icon.ss-standard database
+
+section.section.feature
+  .container
+    article.column.half
+      h3.h4.alt 5 minute setup
+      p.
+        Getting started with Whitespell is amazingly easy.
+    article.column.half
+      section.code-tabs
+        article
+          input(type="radio", name="results-tab" checked)#js
+          label(for="js") JavaScript
+          pre.language-javascript
+            code.
+              //init
+              var ws = new Whitespell('YOUR_API_KEY');
+
+              //get todo's
+              myOwnWs.sendData({
+                  'task': 'SelectTodos',
+                  'name': 'test90'
+              }, function(data) {
+                  console.log(data);
+              });
+        article
+          input.sft(type="radio", name="results-tab")#sft
+          label(for="sft") Swift
+          pre.language-javascript
+            code.
+              //swift code
+              var ws = new Whitespell('YOUR_API_KEY');
+
+              //get todo's
+              myOwnWs.sendData({
+                  'task': 'SelectTodos',
+                  'name': 'test90'
+              }, function(data) {
+                  console.log(data);
+              });
+        article
+          input.oc(type="radio", name="results-tab")#obc
+          label(for="obc") Objective-C
+          pre.language-javascript
+            code.
+              //objective-c code
+              var ws = new Whitespell('YOUR_API_KEY');
+
+              //get todo's
+              myOwnWs.sendData({
+                  'task': 'SelectTodos',
+                  'name': 'test90'
+              }, function(data) {
+                  console.log(data);
+              });
+
+section.section.feature
+  .container
+    article.column.half
+      h3.h4.alt 5 minute setup
+      p.
+        He unaffected sympathize discovered at no am conviction principles.
+        Girl ham very how yet hill four show. Meet lain on he only size.
+
+include ./inc/footer.jade

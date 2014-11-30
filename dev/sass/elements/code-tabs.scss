@@ -1,0 +1,61 @@
+.code-tabs {
+    position: relative;
+    margin-top: -15px;
+
+    article {
+        min-height: 340px;
+        float: left;
+
+        &:nth-child(1) label {
+            border-top-left-radius: $border-radius;
+        }
+        &:last-child label {
+            border-top-right-radius: $border-radius;
+        }
+
+        label {
+            cursor: pointer;
+
+            font-size: $size-s;
+            padding: $padding-m;
+
+            background-color: $base-color;
+            color: $white;
+
+            position: relative;
+            bottom: -16px;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        input[type="radio"]{
+            display: none;
+
+            &:checked {
+                & ~ label {
+                    background-color: $base-color-dark;
+                    & ~ pre {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        pre[class*="language-"] {
+            margin: 0;
+            display: none;
+
+            position: absolute !important;
+            top: 56px;
+            left: 0;
+        }
+
+        :not(pre) > code[class*="language-"],
+        pre[class*="language-"] {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

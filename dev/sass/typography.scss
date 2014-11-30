@@ -9,7 +9,7 @@
 }
 
 p,img,ul,ol,pre {
-	margin-bottom: $margin-l;
+	margin-bottom: $margin-m;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -52,6 +52,10 @@ a {
 	text-decoration: none;
 }
 
+p.no-clear {
+	margin-bottom: 0;
+}
+
 pre {
 	font-family: 'meslo_lg_l_dzregular';
 	padding: $padding-m;
@@ -59,7 +63,17 @@ pre {
 	@include border(left, $accent-alt);
 }
 
-b {
+pre[class*="language-"] {
+    font-size: $size-s;
+    border-radius: $border-radius;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background-color: $base-color-dark !important;
+}
+
+b,strong {
 	font-weight: 500;
 }
 
@@ -70,6 +84,15 @@ u {
 
 small {
 	font-size: $size-s;
+}
+
+.button-set {
+	font-size: 1.1em;
+	span {
+		margin-right: $margin-m;
+		margin-left: $margin-m;
+		font-style: italic;
+	}
 }
 
 a.btn,

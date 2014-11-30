@@ -2,7 +2,7 @@ include ./inc/header.jade
 
 section.section.home-intro
   .container
-    article.column.half.content
+    article.column.half.content.clear-l
       h2 Whitespell
       h3.h4.alt Worlds first intelligent & distributed API
       ul.usp
@@ -24,9 +24,9 @@ section.section.home-intro
       .character
         img(src="assets/img/character.png")
 
-section.section.accent-alt.no-clear
-  .container
-    article.column.half
+section.section.fifty
+  article
+    .container
       h3.h4 Why its awesome for you
       ul.usp
         li
@@ -42,14 +42,10 @@ section.section.accent-alt.no-clear
           span.ss-icon.ss-standard check
           | Collaborate, manage and deploy easily using our cloud panel or CLI
       a.btn.alt(href="./sign-up.html") Try it now
-    article.column.half.illustration
-      span.ss-icon.ss-standard database
+    span.ss-icon.ss-standard.illustration database
 
-        
-
-section.section.accent.no-clear
-  .container
-    article.column.half
+  article
+    .container
       h3.h4 Why its awesome for your business
       ul.usp
         li
@@ -62,7 +58,125 @@ section.section.accent.no-clear
           span.ss-icon.ss-standard check
           | Integrated monetization and customer support options
       a.btn(href="./pricing.html") View our premium plans
-    article.column.half.illustration
-      span.ss-icon.ss-standard barchart
+    span.ss-icon.ss-standard.illustration barchart
+
+.container
+  section.section
+    article.column.half.clear-l
+      h2 How it works
+      p.no-clear
+        | Whitespell has a whole bunch of awesome features but the most important is probably 
+        b the way it works in its most basic form.
+        |  Lets create a little script that allows us to insert todos into the database.
+
+  section.section
+    article.column.half.clear-l
+      h4.alt #1 Creating a Prepaired Statement
+      p.no-clear
+        | The part where Whitespell really starts to shine is with Prepared Statements. Think of prepared statements as
+        | dynamic SQL queries. They are 
+        b simple to write but very powerfull and secure. 
+        | They think intelligently about your data and the requests you perform to them and optimise your database accordingly. 
+        b Lets create one using our CLI.
+
+    article.column.half.clear-r
+      pre.language-bash
+        code.
+          ws todo_app ps:new
+          name: insert_todo
+          public?: y
+          query: INSERT INTO todos (content) VALUES ('$this->{content}')
+
+          &#10003; Prepared Statement 'insert_todo' created
+
+  section.section
+    article.column.half.clear-l
+      section.code-tabs(style="height:295px;")
+        article
+          input(type="radio", name="results-tab" checked)#js
+          label(for="js") JavaScript
+          pre.language-javascript
+            code.
+              var ws = new Whitespell('YOUR_API_KEY');
+
+              ws.send({
+                'task': 'insert_todo',
+                'content': 'Do Groceries'
+              });
+
+              ws.on('insert_todo', function(data){
+                console.log(data.name+' was inserted!');
+              });
+        article
+          input.sft(type="radio", name="results-tab")#sft
+          label(for="sft") Swift
+          pre.language-javascript
+            code.
+              //swift code
+              var ws = new Whitespell('YOUR_API_KEY');
+
+              //get todo's
+              myOwnWs.sendData({
+                  'task': 'SelectTodos',
+                  'content': 'test90'
+              }, function(data) {
+                  console.log(data);
+              });
+        article
+          input.oc(type="radio", name="results-tab")#obc
+          label(for="obc") Objective-C
+          pre.language-javascript
+            code.
+              //objective-c code
+              var ws = new Whitespell('YOUR_API_KEY');
+
+              //get todo's
+              myOwnWs.sendData({
+                  'task': 'SelectTodos',
+                  'content': 'test90'
+              }, function(data) {
+                  console.log(data);
+              });
+        article
+          input.oc(type="radio", name="results-tab")#java
+          label(for="java") Java
+          pre.language-java
+            code.
+              //objective-c code
+              Whitespell ws = new Whitespell('YOUR_API_KEY');
+
+              //get todo's
+              myOwnWs.sendData({
+                  'task': 'SelectTodos',
+                  'content': 'test90'
+              }, function(data) {
+                  console.log(data);
+              });
+        article
+          input.oc(type="radio", name="results-tab")#cli
+          label(for="cli") cURL
+          pre.language-bash
+            code.
+              curl https://api.whitespell.com/insert_todo \
+              -X POST \
+              -H 'Content-Type:application/json' \
+              -u 'API_KEY' \
+              -d '{"content":"Do Groceries"}'
+
+    article.column.half.clear-r
+      h4.alt #2 Using one
+      :markdown
+        Now we have our prepaired statement set up we can **interact with it using either the command line or one
+        of the many client side libraries**.
+
+        What happens here is that a request is performed to a CDN. By getting the data of a CDN we get a
+        huge performace gain. The code you see here got data back in under 5ms!
+
+  section.section.small-margin.centered
+    article.column.half.clear-l
+      .button-set
+        a(href="#").btn.alt More Features
+        span or
+        a(href="#").btn Sign up
 
 include ./inc/footer.jade
