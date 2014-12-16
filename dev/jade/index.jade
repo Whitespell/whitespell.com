@@ -20,7 +20,7 @@ section.section.home-intro
           | A lot more (including open source libraries!)
       a.btn(href='./producs.html') Find out more
 
-    article.column.half
+    article.column.half.clear-r
       .character
         img(src="assets/img/character.png")
 
@@ -42,7 +42,6 @@ section.section.fifty
           span.ss-icon.ss-standard check
           | Collaborate, manage and deploy easily using our cloud panel or CLI
       a.btn.alt(href="./sign-up.html") Try it now
-    span.ss-icon.ss-standard.illustration database
 
   article
     .container
@@ -58,7 +57,6 @@ section.section.fifty
           span.ss-icon.ss-standard check
           | Integrated monetization and customer support options
       a.btn(href="./pricing.html") View our premium plans
-    span.ss-icon.ss-standard.illustration barchart
 
 .container
   section.section
@@ -77,21 +75,21 @@ section.section.fifty
         | dynamic SQL queries. They are 
         b simple to write but very powerfull and secure. 
         | They think intelligently about your data and the requests you perform to them and optimise your database accordingly. 
-        b Lets create one using our CLI.
+        b Lets create one using the CLI.
 
     article.column.half.clear-r
       pre.language-bash
         code.
-          ws todo_app ps:new
+          $ ws todo_app ps:new
           name: insert_todo
-          public?: y
+          public: y
           query: INSERT INTO todos (content) VALUES ('$this->{content}')
 
           &#10003; Prepared Statement 'insert_todo' created
 
   section.section
     article.column.half.clear-l
-      section.code-tabs(style="height:295px;")
+      section.code-tabs(style="height:335px;")
         article
           input(type="radio", name="results-tab" checked)#js
           label(for="js") JavaScript

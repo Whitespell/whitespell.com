@@ -50,8 +50,7 @@ header#header {
 
 footer#footer {
 	font-size: $size-s;
-	text-align: center;
-	margin-bottom: $margin-m;
+	padding-bottom: $margin-m;
 	padding-top: $margin-l;
 	@include border(top);
 

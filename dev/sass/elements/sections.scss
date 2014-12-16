@@ -2,15 +2,26 @@
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: $margin-xl;
+	position: relative;
+
+	.illustration {
+		position: absolute;
+		font-size: 15em;
+		top: $margin-xl;
+		right: $margin-xl;
+		z-index: -1;
+	}
 
 	.container {
-		overflow: visible;
+		position: relative;
+		z-index: 1;
 	}
 
 	&.centered {
 		text-align: center;
 
 		.column {
+			text-align: center;
 			margin: 0 auto;
 			float: none;
 		}
@@ -30,6 +41,17 @@
 
 			position: relative;
 
+			.illustration {
+				font-size: 25em;
+				color: $accent-hover;
+				text-align: center;
+
+				position: absolute;
+				top: 80px;
+				left: $margin-xl;
+				bottom: 0;
+			}
+
 			.container {
 				width: $main-container-width/2;
 				position: relative;
@@ -37,41 +59,35 @@
 				padding-left: $margin-m;
 				padding-right: $margin-m;
 			}
+
+			@include media($max-width: 1080px){
+				float: none;
+				width: 100%;
+
+				.container {
+					width: $main-container-width;
+				}
+			}
+
 		}
-	}
-
-	.illustration {
-		font-size: 25em;
-		color: $accent-hover;
-		text-align: center;
-
-		position: absolute;
-		top: 80px;
-		left: $margin-xl;
-		bottom: 0;
 	}
 
 	&.no-clear {
 		margin-bottom: 0;
 	}
 
-	&.page-title {
-		@include reset-text-color();
-		padding-bottom: $margin-l;
-		padding-top: $margin-l;
+	&.page-title, &.accent, &.accent-alt, &.fifty article:nth-child(1),&.fifty article:last-child {
+		padding-top: $margin-xl;
 
-		.illustration {
-			position: relative;
-			font-size: 15em;
-			margin-bottom: -15em;
-			top: -40px;
+		@include reset-text-color();
+
+		.container:after {
+			content: '';
+			overflow: hidden;
+			height: $margin-xl;
+			width: 100%;
+			float: left;
 		}
-	}
-
-	&.accent,&.accent-alt,&.fifty article:nth-child(1),&.fifty article:last-child {
-		padding: $margin-xl 0;
-
-		@include reset-text-color();
 
 		a.btn {
 			background-color: $accent-hover;
@@ -86,6 +102,30 @@
 				&:hover {
 					background-color: $accent-alt-dark;
 				}
+			}
+		}
+	}
+
+	&.page-title {
+		padding-bottom: 0;
+		padding-top: $margin-l;
+
+		.container:after {
+			height: $margin-l;
+		}
+
+		.illustration {
+			font-size: 120px;
+			top: auto;
+			bottom: 0;
+
+			line-height: 0;
+
+			.ss-icon {
+				color: $white;
+				display: block;
+
+				line-height: 0;
 			}
 		}
 	}

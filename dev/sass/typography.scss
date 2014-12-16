@@ -56,21 +56,14 @@ p.no-clear {
 	margin-bottom: 0;
 }
 
-pre {
-	font-family: 'meslo_lg_l_dzregular';
-	padding: $padding-m;
-	padding-left: $margin-l;
-	@include border(left, $accent-alt);
-}
-
-pre[class*="language-"] {
-    font-size: $size-s;
-    border-radius: $border-radius;
-}
-
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: $base-color-dark !important;
+	font-size: $size-s;
+	background-color: $white !important;
+	padding: $padding-l !important;
+
+	@include border();
+	border-radius: $border-radius;
 }
 
 b,strong {
@@ -84,48 +77,6 @@ u {
 
 small {
 	font-size: $size-s;
-}
-
-.button-set {
-	font-size: 1.1em;
-	span {
-		margin-right: $margin-m;
-		margin-left: $margin-m;
-		font-style: italic;
-	}
-}
-
-a.btn,
-input[type='submit'] {
-	font-size: $size-s;
-	font-weight: $main-weight;
-
-	display: inline-block;
-
-	color: $white;
-	background-color: $accent;
-	border: none;
-	@include border(false, $accent-dark);
-	border-radius: $border-radius;
-
-	padding: $padding-m;
-
-	cursor: pointer;
-
-	@include transition(background-color, $transition-duration-alt);
-
-	&.alt {
-		background: $accent-alt;
-		border-color: $accent-alt-dark;
-
-		&:hover {
-			background: $accent-alt-hover;
-		}
-	}
-
-	&:hover {
-		background-color: $accent-hover;
-	}
 }
 
 ul, ol {
@@ -153,24 +104,27 @@ ul, ol {
 }
 
 ul {
+  padding-left: 20px;
 
 	li {
-		margin-bottom: $margin-xs;
+		margin-bottom: $margin-s;
 
 		&:before {
 			content: '';
 
-			width: 5px;
-			height: 5px;
+			width: 3px;
+			height: 3px;
 
-			background-color: $accent;
+			background-color: $base-color;
+      border-radius: 100%;
 
 			float: left;
-			margin: $size-m/2+3 $size-s 0 0;
+			margin: $size-m/2+3 $margin-s 0 -20px;
 		}
 	}
 
 	&.inline {
+    padding-left: 0;
 		li {
 			display: inline;
 			margin-right: $margin-m;
@@ -186,11 +140,20 @@ ul {
 
 		li {
 			.ss-icon {
+				font-size: .7em;
 				color: $accent-alt;
 				margin-right: $margin-s;
-				position: relative;
-				top: 4px;
+
 				margin-left: -26px;
+
+				display: inline-block;
+
+				width: 20px;
+				height: 20px;
+				@include border($color: $accent-alt, $width: $border-width-alt);
+				text-align: center;
+				line-height: 20px;
+				border-radius: 100%;
 			}
 
 			&:before {

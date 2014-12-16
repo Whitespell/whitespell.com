@@ -10,8 +10,6 @@ body {
 	font-weight: $main-weight;
 	color: $base-color;
 	background: $white;
-
-	@include border(bottom, $accent-alt);
 }
 
 .container {

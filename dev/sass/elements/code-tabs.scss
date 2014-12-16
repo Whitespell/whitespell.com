@@ -1,6 +1,6 @@
 .code-tabs {
+    overflow: hidden;
     position: relative;
-    margin-top: -15px;
 
     article {
         min-height: 340px;
@@ -19,15 +19,10 @@
             font-size: $size-s;
             padding: $padding-m;
 
-            background-color: $base-color;
-            color: $white;
-
+            //background-color: $base-color;
+            //color: $white;
             position: relative;
-            bottom: -16px;
-
-            &:before {
-                display: none;
-            }
+            z-index: 2;
         }
 
         input[type="radio"]{
@@ -35,7 +30,8 @@
 
             &:checked {
                 & ~ label {
-                    background-color: $base-color-dark;
+                    font-weight: $bold-weight;
+                    //background-color: darken($accent, 20%);
                     & ~ pre {
                         display: block;
                     }
@@ -44,16 +40,16 @@
         }
 
         pre[class*="language-"] {
+            min-width: 100%;
             margin: 0;
             display: none;
 
             position: absolute !important;
-            top: 56px;
+            top: 40px;
             left: 0;
         }
 
-        :not(pre) > code[class*="language-"],
-        pre[class*="language-"] {
+        :not(pre) > code[class*="language-"], pre[class*="language-"] {
             position: relative;
             z-index: 1;
         }

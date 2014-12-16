@@ -2,58 +2,111 @@ include ./inc/header.jade
 
 section.section.page-title
   .container
-    article.column.half
-      h2 Our Plans
-      h3.h4 Tell us what you need
-    article.column.half.illustration
-      span.ss-icon.ss-standard barchart
+    h2 Our Plans
+    h3.h4 Scale as you grow
+    article.column.half.clear-l
+      p
+        b Flexible plans
+        |  which allow you to only
+        b  pay for what you use.
+    .illustration
+      span.ss-icon.ss-standard cloud
 
-section.section.pricing-tables
+.container
+  section.section
+    h3.h4 Start with our free plan
+    article.column.half.clear-l
+      p
+        b 150
+        |  Intelligence Connections per hour,
+        b  1
+        |  Dynagram Email per day,
+        b  2
+        |  Visualizations,
+        b  2
+        |  Included Team Members,
+        b  500
+        |  API Calls per hour (Library/HTTP)
+    article.column.half.clear-r.centered
+      a.btn.big(href="/sign-up") Create your free account
+
+section.section
   .container
-    article.featured
-      .wrapper
-        h3 Free
-      .price free
-      .wrapper
-        ul.no-bullets
-          li
-            b 150 Intelligence Connections
-            | /hour
-          li
-            b 1 Total Dynagram Emails
-            | /day for all users
-          li
-            b 2 Visualizations
-          li
-            b 2 Included Team Size
-          li
-            b 500 Blox Calls
-            | per hour (Library/HTTP)
-          li
-            b No Marketplace Credit
-      a.btn.alt(href='#') Sign up
+    article.pricing-item.column.one-third.clear-l
+      header
+        h3 Micro
+      .price $2
+      .content
+        ul
+          li 200 Intelligence Connections
+          li 2 Total Dynagram Emails
+          li 3 Visualizations
+          li 25 Included Team Size
+          li 1000 Blox Calls
+          li $15 Marketplace Credit
+      a.btn(href='#') Purchase plan
 
-    article
-      .wrapper
-        h3 Simple
-      .price $40 p/m
-      .wrapper
-        ul.no-bullets
+    article.pricing-item.column.one-third.clear-l.featured
+      header
+        h3 Small
+      .price $5
+      .content
+        ul
+          li 350 Intelligence Connections
+          li 2 Total Dynagram Emails
+          li 15 Visualizations
+          li 100 Included Team Size
+          li 4000 Blox Calls
+          li $50 Marketplace Credit
+      a.btn(href='#').alt Purchase plan
+
+    article.pricing-item.column.one-third.clear-l
+      header
+        h3 Advanced
+      .price $10
+      .content
+        ul
+          li 550 Intelligence Connections
+          li 20 Total Dynagram Emails
+          li 25 Visualizations
+          li 200 Included Team Size
+          li 5000 Blox Calls
+          li $100 Marketplace Credit
+      a.btn(href='#') Purchase plan
+
+section.section.accent-alt.no-clear
+  .container
+    h3 Superhero
+    article.column
+      article.column.one-third.clear-l
+        p.
+          Do you handle a lot of big data? How about a plan designed 
+          specifically for your company? Contact us and we'll get on it
+          right away.
+      article.column.one-third
+        ul.usp
           li
-            b 150 Intelligence Connections
-            | /hour
+            span.ss-icon.ss-standard check
+            | 550+ Intelligence Connections
           li
-            b 1 Total Dynagram Emails
-            | /day for all users
+            span.ss-icon.ss-standard check
+            | 20+ Total Dynagram Emails
           li
-            b 2 Visualizations
+            span.ss-icon.ss-standard check
+            | 25+ Visualizations
+      article.column.one-third
+        ul.usp
           li
-            b 2 Included Team Size
+            span.ss-icon.ss-standard check
+            | 200+ Included Team Size
           li
-            b 500 Blox Calls
-            | per hour (Library/HTTP)
+            span.ss-icon.ss-standard check
+            | 5000+ Blox Calls
           li
-            b No Marketplace Credit
-      a.btn(href='#') Sign up
+            span.ss-icon.ss-standard check
+            | $500+ Marketplace Credit
+    a.btn.alt(href="#") Contact us
+    .illustration
+      span.ss-icon.ss-standard barchart
 
 include ./inc/footer.jade
