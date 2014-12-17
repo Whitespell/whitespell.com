@@ -19,8 +19,8 @@ p, img, ul, ol, pre {
   margin-bottom: 20px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  line-height: 1.2em;
+  font-weight: 100;
+  line-height: 1.3em;
   margin-bottom: 20px;
   color: #2e88bf; }
   h1.alt, h2.alt, h3.alt, h4.alt, h5.alt, h6.alt {
@@ -48,19 +48,19 @@ a {
   color: #2e88bf;
   text-decoration: none; }
 
-p.no-clear {
-  margin-bottom: 0; }
-
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
+  width: 100%;
   font-size: 0.85em;
-  background-color: #f5f5f5 !important;
+  background-color: #2f2f2f !important;
   padding: 30px 40px !important;
-  border: solid 1px #d9d9d9;
   border-radius: 3px; }
 
 b, strong {
   font-weight: 500; }
+
+cite {
+  font-style: italic; }
 
 u {
   text-decoration: none;
@@ -73,6 +73,8 @@ ul li, ol li {
   display: block; }
   ul li.active, ol li.active {
     color: #2e88bf; }
+  ul li:last-child, ol li:last-child {
+    margin-bottom: 0; }
 ul > ul li, ul ol li, ol > ul li, ol ol li {
   padding-left: 20px;
   border-left: solid 1px #d9d9d9; }
@@ -138,7 +140,7 @@ ol {
 
 body {
   font: 16px "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   color: #484848;
   background: #f5f5f5; }
 
@@ -299,7 +301,7 @@ img {
 a.btn,
 input[type='submit'] {
   font-size: 0.85em;
-  font-weight: 300;
+  font-weight: 100;
   display: inline-block;
   color: #f5f5f5;
   background-color: #2e88bf;
@@ -342,7 +344,7 @@ input,
 textarea,
 select {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 100;
   color: #484848;
   background: transparent;
   width: 100%;
@@ -645,35 +647,86 @@ footer#footer {
     opacity: 1; } }
 .code-tabs {
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  /*
+      article {
+          min-height: 340px;
+          float: left;
+  
+          &:nth-child(1) label {
+              border-top-left-radius: $border-radius;
+          }
+          &:last-child label {
+              border-top-right-radius: $border-radius;
+          }
+  
+          label {
+              cursor: pointer;
+  
+              font-size: $size-s;
+              padding: $padding-m;
+  
+              //background-color: $base-color;
+              //color: $white;
+              position: relative;
+              z-index: 2;
+          }
+  
+          input[type="radio"]{
+              display: none;
+  
+              &:checked {
+                  & ~ label {
+                      font-weight: $bold-weight;
+                      //background-color: darken($accent, 20%);
+                      & ~ pre {
+                          display: block;
+                      }
+                  }
+              }
+          }
+  
+          pre[class*="language-"] {
+              min-width: 100%;
+              margin: 0;
+              display: none;
+  
+              position: absolute !important;
+              top: 40px;
+              left: 0;
+          }
+  
+          :not(pre) > code[class*="language-"], pre[class*="language-"] {
+              position: relative;
+              z-index: 1;
+          }
+      }
+  */ }
+  .code-tabs nav a {
+    color: #484848;
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 10px 15px; }
+    .code-tabs nav a.is-active {
+      font-weight: 500; }
   .code-tabs article {
-    min-height: 340px;
-    float: left; }
-    .code-tabs article:nth-child(1) label {
-      border-top-left-radius: 3px; }
-    .code-tabs article:last-child label {
-      border-top-right-radius: 3px; }
-    .code-tabs article label {
-      cursor: pointer;
-      font-size: 0.85em;
-      padding: 10px 15px;
-      position: relative;
-      z-index: 2; }
-    .code-tabs article input[type="radio"] {
-      display: none; }
-      .code-tabs article input[type="radio"]:checked ~ label {
-        font-weight: 500; }
-        .code-tabs article input[type="radio"]:checked ~ label ~ pre {
-          display: block; }
-    .code-tabs article pre[class*="language-"] {
-      min-width: 100%;
-      margin: 0;
-      display: none;
-      position: absolute !important;
-      top: 40px;
-      left: 0; }
-    .code-tabs article :not(pre) > code[class*="language-"], .code-tabs article pre[class*="language-"] {
-      position: relative;
-      z-index: 1; }
+    display: none; }
+    .code-tabs article.is-active {
+      display: block; }
+
+.testimonials .container {
+  width: 600px; }
+.testimonials p {
+  font-size: 1.4em; }
+.testimonials cite .photo {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  top: 3px;
+  border: solid 2px #246b96;
+  float: left;
+  margin-right: 10px;
+  border-radius: 100%; }
 
 /*# sourceMappingURL=main.css.map */

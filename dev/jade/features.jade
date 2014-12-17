@@ -12,13 +12,13 @@ section.section.page-title
           | 5 minute setup
         li
           span.ss-icon.ss-standard check
-          | No more setting-up back infrastructures
+          | No more setting-up back-end infrastructures
+        li
+          span.ss-icon.ss-standard check
+          | Manage and deploy easily using our cloud panel or CLI
         li
           span.ss-icon.ss-standard check
           | Reduces average loading time by at least 60%
-        li
-          span.ss-icon.ss-standard check
-          | Collaborate, manage and deploy easily using our cloud panel or CLI
     article.column.half.clear-r
       ul.usp
         li
@@ -33,67 +33,83 @@ section.section.page-title
     .illustration
       span.ss-icon.ss-standard cloud
 
-
-section.section.feature
+section.section
   .container
-    article.column.half
-      h3.h4.alt 5 minute setup
+    article.column.half.clear-l
+      h4 5 minute setup
       p.
-        Getting started with Whitespell is amazingly easy.
-    article.column.half
+        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+        Merry sense given he be arise. Conduct at an replied removal an amongst.
+    article.column.half.clear-r
+      pre.language-bash
+        code.
+          sudo npm install whitespell
+          whitespell login
+          whitespell create todo_app
+
+          &#10003; App 'todo_app' created
+
+section.section
+  .container
+    article.column.half.clear-l
       section.code-tabs
-        article
-          input(type="radio", name="results-tab" checked)#js
-          label(for="js") JavaScript
-          pre.language-javascript
-            code.
-              //init
-              var ws = new Whitespell('YOUR_API_KEY');
+        nav
+          a(data-tab-id="cli").is-active CLI
+          a(data-tab-id="js") JavaScript
+        section
+          article.is-active
+            pre.language-bash.tab
+              code.
+                whitespell todo_app ps:new
+                name: insert_todo
+                public: y
+                query: INSERT INTO todos (content) VALUES ('$this->{content}')
 
-              //get todo's
-              myOwnWs.sendData({
-                  'task': 'SelectTodos',
-                  'name': 'test90'
-              }, function(data) {
-                  console.log(data);
-              });
-        article
-          input.sft(type="radio", name="results-tab")#sft
-          label(for="sft") Swift
-          pre.language-javascript
-            code.
-              //swift code
-              var ws = new Whitespell('YOUR_API_KEY');
+                &#10003; Prepared Statement 'insert_todo' created
+          article
+            pre.language-javascript
+              code.
+                var ws = new Whitespell('YOUR_API_KEY');
 
-              //get todo's
-              myOwnWs.sendData({
-                  'task': 'SelectTodos',
-                  'name': 'test90'
-              }, function(data) {
-                  console.log(data);
-              });
-        article
-          input.oc(type="radio", name="results-tab")#obc
-          label(for="obc") Objective-C
-          pre.language-javascript
-            code.
-              //objective-c code
-              var ws = new Whitespell('YOUR_API_KEY');
+                ws.send({
+                  'task': 'insert_todo',
+                  'content': 'Do Groceries'
+                });
 
-              //get todo's
-              myOwnWs.sendData({
-                  'task': 'SelectTodos',
-                  'name': 'test90'
-              }, function(data) {
-                  console.log(data);
-              });
-
-section.section.feature
-  .container
-    article.column.half
-      h3.h4.alt 5 minute setup
+                ws.on('insert_todo', function(data){
+                  console.log(data.name+' was inserted!');
+                });
+    article.column.half.clear-r
+      h4 No more setting-up back-end infrastructures
       p.
-        He unaffected sympathize discovered at no am conviction principles.
-        Girl ham very how yet hill four show. Meet lain on he only size.
+        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+        Merry sense given he be arise. Conduct at an replied removal an amongst.
+
+section.section
+  .container
+    article.column.half.clear-l
+      h4 Manage and deploy easily using our cloud panel or CLI
+      p.
+        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+        Merry sense given he be arise. Conduct at an replied removal an amongst.
+    article.column.half.clear-r
+      pre.language-bash
+        code.
+          whitespell deploy todo_app
+
+          &#10003; App deployed on todo-app.whitespell.com
+
+section.section.accent.no-clear.testimonials
+  .container
+    p.
+      I absolutely love Whitespell! Its so Awesome I wanna die!! Its sooo fluffyyyyyyy!!!!! Yes, thats awesome with a capital "A".
+      You know why? Because I like the alphabet, thats why!
+    cite
+      div.photo
+        img(src="https://randomuser.me/api/portraits/med/women/48.jpg")
+      | Robert Van Haaren
+      br
+      small
+        em CEO at Duxilio
 
 include ./inc/footer.jade

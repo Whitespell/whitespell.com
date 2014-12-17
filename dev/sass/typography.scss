@@ -52,22 +52,23 @@ a {
 	text-decoration: none;
 }
 
-p.no-clear {
-	margin-bottom: 0;
-}
-
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
+	width: 100%;
+
 	font-size: $size-s;
-	background-color: $white !important;
+	background-color: $base-color-dark !important;
 	padding: $padding-l !important;
 
-	@include border();
 	border-radius: $border-radius;
 }
 
 b,strong {
 	font-weight: 500;
+}
+
+cite {
+	font-style: italic;
 }
 
 u {
@@ -86,6 +87,10 @@ ul, ol {
 
 		&.active {
 			color: $accent;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 

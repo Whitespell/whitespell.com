@@ -2,6 +2,27 @@
     overflow: hidden;
     position: relative;
 
+    nav a {
+        color: $base-color;
+        cursor: pointer;
+
+        font-size: $size-s;
+        padding: $padding-m;
+
+        &.is-active {
+            font-weight: $bold-weight;
+        }
+    }
+
+    article {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+/*
     article {
         min-height: 340px;
         float: left;
@@ -54,4 +75,5 @@
             z-index: 1;
         }
     }
+*/
 }
