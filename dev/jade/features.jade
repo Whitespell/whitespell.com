@@ -56,9 +56,9 @@ section.section
         nav
           a(data-tab-id="cli").is-active CLI
           a(data-tab-id="js") JavaScript
-        section
-          article.is-active
-            pre.language-bash.tab
+        .tabs
+          .tab.cli.is-active
+            pre.language-bash
               code.
                 whitespell todo_app ps:new
                 name: insert_todo
@@ -66,7 +66,7 @@ section.section
                 query: INSERT INTO todos (content) VALUES ('$this->{content}')
 
                 &#10003; Prepared Statement 'insert_todo' created
-          article
+          .tab.js
             pre.language-javascript
               code.
                 var ws = new Whitespell('YOUR_API_KEY');

@@ -79,7 +79,7 @@ module.exports = function (grunt){
           noempty: true, //Prohibit use of empty blocks
           maxparams: 3, //Max number of formal params allowed per function
           maxdepth: 4, //Max depth of nested blocks (within functions)
-          predef: ['FastButton']
+          predef: ['B', 'console']
       },
       all: ['<%= devRoot %>/js/src/*.js']
     },
@@ -88,14 +88,14 @@ module.exports = function (grunt){
           separator: '\n\n',
         },
         js: {
-          src: ['<%= webRoot %>/fonts/ss-pika/ss-pika.js', '<%= devRoot %>/js/libs/*.js', '<%= devRoot %>/js/src/*.js'],
+          src: ['<%= webRoot %>/fonts/ss-standard/ss-standard.js', '<%= devRoot %>/js/libs/**/*.js', '<%= devRoot %>/js/src/**/*.js'],
           dest: '<%= webRoot %>/js/app.js'
         }
     },
     uglify: {
         js: {
           files: {
-            '<%= webRoot %>/js/app.min.js': ['<%= webRoot %>/fonts/ss-pika/ss-pika.js', '<%= devRoot %>/js/libs/*.js', '<%= devRoot %>/js/src/*.js']
+            '<%= webRoot %>/js/app.min.js': ['<%= webRoot %>/fonts/ss-standard/ss-standard.js', '<%= devRoot %>/js/libs/**/*.js', '<%= devRoot %>/js/src/**/*.js']
           }
         }
     }
