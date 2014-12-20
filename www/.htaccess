@@ -6,24 +6,3 @@ ErrorDocument 404 /404.html
 
 RewriteEngine On
 RewriteRule ^([a-z\-]+)$ $1.html
-
-#RewriteRule ^docs/([a-zA-Z\-]+)(\/([a-zA-Z\-]+))?$ docs.php?docs-page=$1&content-page=$3
-#RewriteRule ^blog/([a-zA-Z\-]+)$ blog-post.php?title=$1
-
-#GZip
-
-# BEGIN GZIP
-<ifmodule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
-</ifmodule>
-# END GZIP
-
-#Browser Caching
-
-FileETag MTime Size
-<ifmodule mod_expires.c>
-  <filesmatch "\.(jpg|gif|png|css|js|eot|ttf|ico|woff)$">
-       ExpiresActive on
-       ExpiresDefault "access plus 1 week"
-   </filesmatch>
-</ifmodule>

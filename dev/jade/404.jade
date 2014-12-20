@@ -1,0 +1,18 @@
+extends ./inc/template
+
+block pageVars
+  - var pageTitle = "404"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  section.section.page-title.no-clear
+    .container
+      h2 404 Error
+      h3.h4 The requested page wasn't found on this server
+      article.column.half.clear-l
+        p
+          | We weren't able to find the page you're looking for.
+          | Perhaps you'll find what you're looking for on our 
+          a(href="/") Homepage.
+      .illustration
+        span.ss-icon.ss-standard cloud

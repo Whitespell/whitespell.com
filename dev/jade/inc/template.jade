@@ -59,13 +59,13 @@ head
 div#header-bg
 header#header
   .container
-    a(href='/')
+    a(href="/")
       h1#logo
-        img(src='assets/img/whitespell-logo-white.svg', alt='Whitespell Logo')
+        img(src="assets/img/whitespell-logo-white.svg", alt="Whitespell Logo")
     nav#main-nav.hidden
       ul.inline
         each name, href in {"features.html":"Features", "pricing.html":"Pricing", "#":"Documentation", "contact.html":"Contact"}
-          if pageTitle === name || (pageTitle === '' && name === 'Home') ? 'active' : ''
+          if pageTitle === name || (pageTitle === '' && href === '/') ? 'active' : ''
             a(href="/#{href}").active
               li= name
           else
