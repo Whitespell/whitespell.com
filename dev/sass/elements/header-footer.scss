@@ -30,7 +30,7 @@ header#header {
 	}
 
 	nav {
-		margin-top: 3px;
+		margin-top: 4px;
 		float: right;
 
 		.btn {
@@ -62,8 +62,8 @@ header#header {
 
 footer#footer {
 	font-size: $size-s;
-	padding-bottom: $margin-m;
-	padding-top: $margin-l;
+	padding-bottom: $margin-m+5px;
+	padding-top: $margin-m+10px;
 	@include border(top);
 
 	a {
@@ -73,7 +73,6 @@ footer#footer {
 	ul {
 		display: block;
 		margin: 0;
-		margin-bottom: $margin-s;
 		float: left;
 
 		&:last-child {

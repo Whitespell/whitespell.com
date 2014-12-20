@@ -92,14 +92,14 @@ module.exports = function (grunt){
           separator: '\n\n',
         },
         js: {
-          src: ['<%= webRoot %>/fonts/ss-standard/ss-standard.js', '<%= devRoot %>/js/libs/**/*.js', '<%= devRoot %>/js/src/**/*.js'],
+          src: ['<%= devRoot %>/js/libs/**/*.js', '<%= devRoot %>/js/src/**/*.js'],
           dest: '<%= webRoot %>/js/app.js'
         }
     },
     uglify: {
         js: {
           files: {
-            '<%= webRoot %>/js/app.min.js': ['<%= webRoot %>/fonts/ss-standard/ss-standard.js', '<%= devRoot %>/js/libs/**/*.js', '<%= devRoot %>/js/src/**/*.js']
+            '<%= webRoot %>/js/app.min.js': ['<%= devRoot %>/js/libs/**/*.js', '<%= devRoot %>/js/src/**/*.js']
           }
         }
     }

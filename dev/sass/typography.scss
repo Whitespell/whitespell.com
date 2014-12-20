@@ -21,6 +21,11 @@ h1,h2,h3,h4,h5,h6 {
 	&.alt {
 		color: $accent-alt;
 	}
+
+	&.inline {
+		display: inline-block;
+		margin-right: $margin-m;
+	}
 }
 
 h1,.h1 {
@@ -140,7 +145,7 @@ ul {
 		}
 	}
 
-	&.usp {
+	&.usp, &.social {
 		padding-left: 26px;
 
 		li {
@@ -165,6 +170,46 @@ ul {
 				display: none;
 			}
 		}
+	}
+
+	&.no-bullets {
+		padding-left: 0;
+		li:before {
+			display: none;
+		}
+	}
+
+	&.social {
+
+		a {
+			color: $base-color;
+		}
+
+		li .ss-icon {
+			font-size: 1.1em;
+			border: none;
+
+			width: 22px;
+			height: 22px;
+			line-height: 22px;
+
+			position: relative;
+			top: 3px;
+
+			&.fb {
+				color: $fb;
+			}
+			&.twitter {
+				color: $twitter;
+			}
+			&.github {
+				color: $github;
+			}
+			&.googleplus {
+				color: $googleplus;
+			}
+		}
+
 	}
 
 }
