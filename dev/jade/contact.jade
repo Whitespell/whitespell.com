@@ -1,73 +1,74 @@
-include ./inc/header.jade
+extends ./inc/template
 
-section.section.page-title
+block pageVars
+  - var pageTitle = "Contact"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  section.section.page-title
+    .container
+      h2 Contact
+      h3.h4 We're always open to a good talk
+      article.column.half.clear-l
+        p
+          | Do you have
+          b  questions?
+          |  Would you like to discuss a
+          b  custom plan?
+          |  Or do you simply fancy a
+          b  good talk?
+      .illustration
+        span.ss-icon.ss-standard cloud
+
   .container
-    h2 Contact
-    h3.h4 We're always open to a good talk
-    article.column.half.clear-l
-      p
-        | Do you have
-        b  questions?
-        |  Would you like to discuss a
-        b  custom plan?
-        |  Or do you simply fancy a
-        b  good talk?
-    .illustration
-      span.ss-icon.ss-standard cloud
+    section.section
+      article.column.half.clear-l
+        h4 Support
+        p
+          | Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled.
+          | To an occasional dissimilar impossible sentiments.
+        a(href="#")
+          h6.alt.inline.no-clear +1 (305) 929-8688
+        a(href="#")
+          h6.alt.inline.no-clear support@whitespell.com
 
-.container
-  section.section
-    article.column.half.clear-l
-      h4 Support
-      p
-        | Son agreed others exeter period myself few yet nature. Mention mr manners opinion if garrets enabled.
-        | To an occasional dissimilar impossible sentiments.
-      a(href="#")
-        h6.alt.inline.no-clear +1 (305) 929-8688
-      a(href="#")
-        h6.alt.inline.no-clear support@whitespell.com
+      article.column.half.clear-r
+        h4 Social Media
+        ul.social.no-clear
+          li
+            a(href="#")
+              span.ss-icon.ss-social-circle.fb facebook
+              | Facebook
+          li
+            a(href="#")
+              span.ss-icon.ss-social-circle.twitter twitter
+              | Twitter
+          li
+            a(href="#")
+              span.ss-icon.ss-social-circle.googleplus googleplus
+              | Google+
+          li
+            a(href="#")
+              span.ss-icon.ss-social-circle.github octocat
+              | Github
 
-    article.column.half.clear-r
-      h4 Social Media
-      ul.social.no-clear
-        li
-          a(href="#")
-            span.ss-icon.ss-social-circle.fb facebook
-            | Facebook
-        li
-          a(href="#")
-            span.ss-icon.ss-social-circle.twitter twitter
-            | Twitter
-        li
-          a(href="#")
-            span.ss-icon.ss-social-circle.googleplus googleplus
-            | Google+
-        li
-          a(href="#")
-            span.ss-icon.ss-social-circle.github octocat
-            | Github
-
-  section.section
-    h4 Office Address
-    article.column.one-third.clear-l
-      h6.alt United States
-      ul.no-bullets
-        li Whitespell LLC
-        li 990 Biscayne Blvd. Office 503
-        li Miami, FL 33132
-        li +1 (305) 929-8688
-    article.column.two-third.clear-r
-      iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3592.618218595252!2d-80.18977800000003!3d25.783171000000017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6a0faa6d11f%3A0x550785ebdd7e340f!2sMiamiShared!5e0!3m2!1snl!2snl!4v1419087308198", width="100%", height="250", frameborder="0", style="border:0")
-    article.column.one-third.clear-l
-      h6.alt The Netherlands
-      ul.no-bullets
-        li Whitespell VC
-        li Van der Brugghenstraat 1
-        li 6511 SL, Nijmegen
-        li +31 24 684 67 18
-    article.column.two-third.clear-r
-      iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.9388721997416!2d5.869289599999991!3d51.84381209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7084fff155c39%3A0x144a4d5b87a5f5da!2sVan+der+Brugghenstraat+1%2C+6511+SL+Nijmegen!5e0!3m2!1snl!2snl!4v1419087919626", width="100%", height="250", frameborder="0", style="border:0")
-
-
-
-include ./inc/footer.jade
+    section.section
+      h4 Office Address
+      article.column.one-third.clear-l
+        h6.alt United States
+        ul.no-bullets
+          li Whitespell LLC
+          li 990 Biscayne Blvd. Office 503
+          li Miami, FL 33132
+          li +1 (305) 929-8688
+      article.column.two-third.clear-r
+        iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3592.618218595252!2d-80.18977800000003!3d25.783171000000017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6a0faa6d11f%3A0x550785ebdd7e340f!2sMiamiShared!5e0!3m2!1snl!2snl!4v1419087308198", width="100%", height="250", frameborder="0", style="border:0")
+      article.column.one-third.clear-l
+        h6.alt The Netherlands
+        ul.no-bullets
+          li Whitespell VC
+          li Van der Brugghenstraat 1
+          li 6511 SL, Nijmegen
+          li +31 24 684 67 18
+      article.column.two-third.clear-r
+        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.9388721997416!2d5.869289599999991!3d51.84381209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7084fff155c39%3A0x144a4d5b87a5f5da!2sVan+der+Brugghenstraat+1%2C+6511+SL+Nijmegen!5e0!3m2!1snl!2snl!4v1419087919626", width="100%", height="250", frameborder="0", style="border:0")

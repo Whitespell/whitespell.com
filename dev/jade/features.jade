@@ -1,190 +1,193 @@
-include ./inc/header.jade
+extends ./inc/template
 
-section.section.page-title
-  .container
-    h2 Features
-    h3.h4 Overview
+block pageVars
+  - var pageTitle = "Features"
+  - var pageDescription = "Worlds first intelligent & distributed API"
 
+block pageContent
+  section.section.page-title
+    .container
+      h2 Features
+      h3.h4 Overview
+
+      article.column.half.clear-l
+        ul.usp
+          li
+            span.ss-icon.ss-standard check
+            | 5 minute setup
+          li
+            span.ss-icon.ss-standard check
+            | No more setting-up back-end infrastructures
+          li
+            span.ss-icon.ss-standard check
+            | Manage and deploy easily using our cloud panel or CLI
+          li
+            span.ss-icon.ss-standard check
+            | Reduces average loading time by at least 60%
+      article.column.half.clear-r
+        ul.usp
+          li
+            span.ss-icon.ss-standard check
+            | Premium plans that allow you to scale as you grow
+          li
+            span.ss-icon.ss-standard check
+            | Get automatic mail updates about app data
+          li
+            span.ss-icon.ss-standard check
+            | Integrated monetization and customer support options
+      .illustration
+        span.ss-icon.ss-standard cloud
+
+  section.section.feature
+    .container
+      article.column.half
+        h4 5 minute setup
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        pre.language-bash
+          code.
+            sudo npm install whitespell
+            whitespell login
+            whitespell create todo_app
+
+            &#10003; App "todo_app" created
+
+  section.section.feature.inverted
+    .container
+      article.column.half
+        h4 No more setting-up back-end infrastructures
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        section.code-tabs
+          nav
+            a(data-tab-id="cli").is-active Back-end
+            a(data-tab-id="js") Front-end
+          .tabs
+            .tab.cli.is-active
+              pre.language-bash
+                code.
+                  whitespell todo_app ps:new
+                  name: insert_todo
+                  public: y
+                  query: INSERT INTO todos (content) VALUES ('$this->{content}')
+
+                  &#10003; Prepared Statement "insert_todo" created
+            .tab.js
+              pre.language-javascript
+                code.
+                  var ws = new Whitespell('YOUR_API_KEY');
+
+                  ws.send({
+                    'task': 'insert_todo',
+                    'content': 'Do Groceries'
+                  });
+
+                  ws.on('insert_todo', function(data){
+                    console.log(data.name+' was inserted!');
+                  });
+
+  section.section.feature
+    .container
+      article.column.half
+        h4 Manage and deploy apps easily
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        pre.language-bash
+          code.
+            git remote add whitespell https://john.whitespell.com
+            git add -A
+            git commit -m "initial commit"
+            git push -u whitespell master
+
+  section.section.accent.testimonials
+    .container
+      p.
+        I absolutely love Whitespell! Its sooo fluffyyyyyyy!!!!! Yes, thats awesome with a capital "A".
+        You know why? Because I like the alphabet, thats why!
+      cite
+        div.photo
+          img(src="https://randomuser.me/api/portraits/med/women/48.jpg")
+        | Robert van Haaren
+        br
+        small
+          em CEO at Duxilio
+      //- .illustration
+      //-   span.ss-icon.ss-standard text
+
+  section.section.feature.inverted
+    .container
+      article.column.half
+        h4 Reduces average loading time by at least 60%
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        pre.language-java
+          code.
+            whitespell speedtest
+            Returned from Tokyo in 3ms
+            Returned from New York in 6ms
+            Returned from Cape Town in 8ms
+            Returned from Amsterdam in 2ms
+
+            &#10003; Average loading time is 4ms
+
+  section.section.feature
+    .container
+      article.column.half
+        h4 Get automatic mail updates
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        pre.language-bash
+          code.
+            whitespell config analytics.mail.frequency "weekly"
+            whitespell analytics:sendmail
+
+  section.section.feature.inverted
+    .container
+      article.column.half
+        h4 Premium plans that allow you to scale as you grow
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        pre.language-java
+          code.
+            whitespell config plan "Simple"
+            A "Simple" plan costs $5 per month
+            Would you like to continue? [y/N] y
+            Enter your password:
+
+            &#10003; Your plan has been changed to "Simple"
+
+  section.section.feature
+    .container
+      article.column.half
+        h4 Integrated monetization and customer support options
+        p.
+          Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
+          Merry sense given he be arise. Conduct at an replied removal an amongst.
+      article.column.half
+        pre.language-bash
+          code.
+            whitespell analytics:support
+            Month      |  Calls  |  Success rate
+            ------------------------------------
+            December   |  203    |  90%
+            November   |  241    |  95%
+            October    |  141    |  97%
+
+  section.section.centered
     article.column.half.clear-l
-      ul.usp
-        li
-          span.ss-icon.ss-standard check
-          | 5 minute setup
-        li
-          span.ss-icon.ss-standard check
-          | No more setting-up back-end infrastructures
-        li
-          span.ss-icon.ss-standard check
-          | Manage and deploy easily using our cloud panel or CLI
-        li
-          span.ss-icon.ss-standard check
-          | Reduces average loading time by at least 60%
-    article.column.half.clear-r
-      ul.usp
-        li
-          span.ss-icon.ss-standard check
-          | Premium plans that allow you to scale as you grow
-        li
-          span.ss-icon.ss-standard check
-          | Get automatic mail updates about app data
-        li
-          span.ss-icon.ss-standard check
-          | Integrated monetization and customer support options
-    .illustration
-      span.ss-icon.ss-standard cloud
-
-section.section.feature
-  .container
-    article.column.half
-      h4 5 minute setup
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      pre.language-bash
-        code.
-          sudo npm install whitespell
-          whitespell login
-          whitespell create todo_app
-
-          &#10003; App "todo_app" created
-
-section.section.feature.inverted
-  .container
-    article.column.half
-      h4 No more setting-up back-end infrastructures
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      section.code-tabs
-        nav
-          a(data-tab-id="cli").is-active Back-end
-          a(data-tab-id="js") Front-end
-        .tabs
-          .tab.cli.is-active
-            pre.language-bash
-              code.
-                whitespell todo_app ps:new
-                name: insert_todo
-                public: y
-                query: INSERT INTO todos (content) VALUES ('$this->{content}')
-
-                &#10003; Prepared Statement "insert_todo" created
-          .tab.js
-            pre.language-javascript
-              code.
-                var ws = new Whitespell('YOUR_API_KEY');
-
-                ws.send({
-                  'task': 'insert_todo',
-                  'content': 'Do Groceries'
-                });
-
-                ws.on('insert_todo', function(data){
-                  console.log(data.name+' was inserted!');
-                });
-
-section.section.feature
-  .container
-    article.column.half
-      h4 Manage and deploy apps easily
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      pre.language-bash
-        code.
-          git remote add whitespell https://john.whitespell.com
-          git add -A
-          git commit -m "initial commit"
-          git push -u whitespell master
-
-section.section.accent.testimonials
-  .container
-    p.
-      I absolutely love Whitespell! Its sooo fluffyyyyyyy!!!!! Yes, thats awesome with a capital "A".
-      You know why? Because I like the alphabet, thats why!
-    cite
-      div.photo
-        img(src="https://randomuser.me/api/portraits/med/women/48.jpg")
-      | Robert van Haaren
-      br
-      small
-        em CEO at Duxilio
-    //- .illustration
-    //-   span.ss-icon.ss-standard text
-
-section.section.feature.inverted
-  .container
-    article.column.half
-      h4 Reduces average loading time by at least 60%
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      pre.language-java
-        code.
-          whitespell speedtest
-          Returned from Tokyo in 3ms
-          Returned from New York in 6ms
-          Returned from Cape Town in 8ms
-          Returned from Amsterdam in 2ms
-
-          &#10003; Average loading time is 4ms
-
-section.section.feature
-  .container
-    article.column.half
-      h4 Get automatic mail updates
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      pre.language-bash
-        code.
-          whitespell config analytics.mail.frequency "weekly"
-          whitespell analytics:sendmail
-
-section.section.feature.inverted
-  .container
-    article.column.half
-      h4 Premium plans that allow you to scale as you grow
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      pre.language-java
-        code.
-          whitespell config plan "Simple"
-          A "Simple" plan costs $5 per month
-          Would you like to continue? [y/N] y
-          Enter your password:
-
-          &#10003; Your plan has been changed to "Simple"
-
-section.section.feature
-  .container
-    article.column.half
-      h4 Integrated monetization and customer support options
-      p.
-        Forfeited you engrossed but gay sometimes explained. Another as studied it to evident.
-        Merry sense given he be arise. Conduct at an replied removal an amongst.
-    article.column.half
-      pre.language-bash
-        code.
-          whitespell analytics:support
-          Month      |  Calls  |  Success rate
-          ------------------------------------
-          December   |  203    |  90%
-          November   |  241    |  95%
-          October    |  141    |  97%
-          
-section.section.centered
-  article.column.half.clear-l
-    .button-set
-      a(href="#").btn.alt View our premium plans
-      span or
-      a(href="#").btn Create your free account
-
-include ./inc/footer.jade
+      .button-set
+        a(href="#").btn.alt View our premium plans
+        span or
+        a(href="#").btn Create your free account

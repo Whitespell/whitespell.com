@@ -1,177 +1,180 @@
-include ./inc/header.jade
+extends ./inc/template
 
-section.section.home-intro
+block pageVars
+  - var pageTitle = ""
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  section.section.home-intro
+    .container
+      article.column.half.content.clear-l
+        h2 Whitespell
+        h3.h4.alt Worlds first intelligent & distributed API
+        ul.usp
+          li
+            span.ss-icon.ss-standard check
+            | A globally distributed and secure super-powered backend
+          li
+            span.ss-icon.ss-standard check
+            | Cloud-based content management with integrated CDN
+          li
+            span.ss-icon.ss-standard check
+            | Premium plans that allow you to scale as you grow
+          li
+            span.ss-icon.ss-standard check
+            | A lot more (including open source libraries!)
+        a.btn(href='./producs.html') Find out more
+
+      article.column.half.clear-r
+        .character
+          img(src="assets/img/character.png")
+
+  section.section.fifty
+    article
+      .container
+        h3.h4 Why its awesome for you
+        ul.usp
+          li
+            span.ss-icon.ss-standard check
+            | 5 minute setup
+          li
+            span.ss-icon.ss-standard check
+            | No more setting-up back infrastructures
+          li
+            span.ss-icon.ss-standard check
+            | Reduces average loading time by at least 60%
+          li
+            span.ss-icon.ss-standard check
+            | Collaborate, manage and deploy easily using our cloud panel or CLI
+        a.btn.alt(href="./sign-up.html") Try it now
+
+    article
+      .container
+        h3.h4 Why its awesome for your business
+        ul.usp
+          li
+            span.ss-icon.ss-standard check
+            | Premium plans that allow you to scale as you grow
+          li
+            span.ss-icon.ss-standard check
+            | Get automatic mail updates about app data
+          li
+            span.ss-icon.ss-standard check
+            | Integrated monetization and customer support options
+        a.btn(href="./pricing.html") View our premium plans
+
   .container
-    article.column.half.content.clear-l
-      h2 Whitespell
-      h3.h4.alt Worlds first intelligent & distributed API
-      ul.usp
-        li
-          span.ss-icon.ss-standard check
-          | A globally distributed and secure super-powered backend
-        li
-          span.ss-icon.ss-standard check
-          | Cloud-based content management with integrated CDN
-        li
-          span.ss-icon.ss-standard check
-          | Premium plans that allow you to scale as you grow
-        li
-          span.ss-icon.ss-standard check
-          | A lot more (including open source libraries!)
-      a.btn(href='./producs.html') Find out more
+    section.section
+      article.column.half.clear-l
+        h2 How it works
+        p.no-clear
+          | Whitespell has a whole bunch of awesome features but the most important is probably 
+          b the way it works in its most basic form.
+          |  Lets create a little script that allows us to insert todos into the database.
 
-    article.column.half.clear-r
-      .character
-        img(src="assets/img/character.png")
+    section.section
+      article.column.half.clear-l
+        h4.alt #1 Creating a Prepaired Statement
+        p.no-clear
+          | The part where Whitespell really starts to shine is with Prepared Statements. Think of prepared statements as
+          | dynamic SQL queries. They are 
+          b simple to write but very powerfull and secure. 
+          | They think intelligently about your data and the requests you perform to them and optimise your database accordingly. 
+          b Lets create one using the CLI.
 
-section.section.fifty
-  article
-    .container
-      h3.h4 Why its awesome for you
-      ul.usp
-        li
-          span.ss-icon.ss-standard check
-          | 5 minute setup
-        li
-          span.ss-icon.ss-standard check
-          | No more setting-up back infrastructures
-        li
-          span.ss-icon.ss-standard check
-          | Reduces average loading time by at least 60%
-        li
-          span.ss-icon.ss-standard check
-          | Collaborate, manage and deploy easily using our cloud panel or CLI
-      a.btn.alt(href="./sign-up.html") Try it now
+      article.column.half.clear-r
+        pre.language-bash
+          code.
+            whitespell todo_app ps:new
+            name: insert_todo
+            public: y
+            query: INSERT INTO todos (content) VALUES ('$this->{content}')
 
-  article
-    .container
-      h3.h4 Why its awesome for your business
-      ul.usp
-        li
-          span.ss-icon.ss-standard check
-          | Premium plans that allow you to scale as you grow
-        li
-          span.ss-icon.ss-standard check
-          | Get automatic mail updates about app data
-        li
-          span.ss-icon.ss-standard check
-          | Integrated monetization and customer support options
-      a.btn(href="./pricing.html") View our premium plans
+            &#10003; Prepared Statement 'insert_todo' created
 
-.container
-  section.section
+    section.section
+      article.column.half.clear-l
+        section.code-tabs
+          nav
+            a(data-tab-id="js").is-active JavaScript
+            a(data-tab-id="sft") Swift
+            a(data-tab-id="obc") Objective-C
+            a(data-tab-id="java") Java
+            a(data-tab-id="bash") Bash
+          .tabs
+            .tab.js.is-active
+              pre.language-javascript
+                code.
+                  var ws = new Whitespell('YOUR_API_KEY');
+
+                  ws.send({
+                    'task': 'insert_todo',
+                    'content': 'Do Groceries'
+                  });
+
+                  ws.on('insert_todo', function(data){
+                    console.log(data.name+' was inserted!');
+                  });
+            .tab.sft
+              pre.language-javascript
+                code.
+                  //swift code
+                  var ws = new Whitespell('YOUR_API_KEY');
+
+                  //get todo's
+                  myOwnWs.sendData({
+                      'task': 'SelectTodos',
+                      'content': 'test90'
+                  }, function(data) {
+                      console.log(data);
+                  });
+            .tab.obc
+              pre.language-javascript
+                code.
+                  //objective-c code
+                  var ws = new Whitespell('YOUR_API_KEY');
+
+                  //get todo's
+                  myOwnWs.sendData({
+                      'task': 'SelectTodos',
+                      'content': 'test90'
+                  }, function(data) {
+                      console.log(data);
+                  });
+            .tab.java
+              pre.language-java
+                code.
+                  //objective-c code
+                  Whitespell ws = new Whitespell('YOUR_API_KEY');
+
+                  //get todo's
+                  myOwnWs.sendData({
+                      'task': 'SelectTodos',
+                      'content': 'test90'
+                  }, function(data) {
+                      console.log(data);
+                  });
+            .tab.bash
+              pre.language-bash
+                code.
+                  curl https://api.whitespell.com/insert_todo \
+                  -X POST \
+                  -H 'Content-Type:application/json' \
+                  -u 'API_KEY' \
+                  -d '{"content":"Do Groceries"}'
+
+      article.column.half.clear-r
+        h4.alt #2 Using one
+        :markdown
+          Now we have our prepaired statement set up we can **interact with it using either the command line or one
+          of the many client side libraries**.
+
+          What happens here is that a request is performed to a CDN. By getting the data of a CDN we get a
+          huge performace gain. The code you see here got data back in under 5ms!
+
+  section.section.centered
     article.column.half.clear-l
-      h2 How it works
-      p.no-clear
-        | Whitespell has a whole bunch of awesome features but the most important is probably 
-        b the way it works in its most basic form.
-        |  Lets create a little script that allows us to insert todos into the database.
-
-  section.section
-    article.column.half.clear-l
-      h4.alt #1 Creating a Prepaired Statement
-      p.no-clear
-        | The part where Whitespell really starts to shine is with Prepared Statements. Think of prepared statements as
-        | dynamic SQL queries. They are 
-        b simple to write but very powerfull and secure. 
-        | They think intelligently about your data and the requests you perform to them and optimise your database accordingly. 
-        b Lets create one using the CLI.
-
-    article.column.half.clear-r
-      pre.language-bash
-        code.
-          whitespell todo_app ps:new
-          name: insert_todo
-          public: y
-          query: INSERT INTO todos (content) VALUES ('$this->{content}')
-
-          &#10003; Prepared Statement 'insert_todo' created
-
-  section.section
-    article.column.half.clear-l
-      section.code-tabs
-        nav
-          a(data-tab-id="js").is-active JavaScript
-          a(data-tab-id="sft") Swift
-          a(data-tab-id="obc") Objective-C
-          a(data-tab-id="java") Java
-          a(data-tab-id="bash") Bash
-        .tabs
-          .tab.js.is-active
-            pre.language-javascript
-              code.
-                var ws = new Whitespell('YOUR_API_KEY');
-
-                ws.send({
-                  'task': 'insert_todo',
-                  'content': 'Do Groceries'
-                });
-
-                ws.on('insert_todo', function(data){
-                  console.log(data.name+' was inserted!');
-                });
-          .tab.sft
-            pre.language-javascript
-              code.
-                //swift code
-                var ws = new Whitespell('YOUR_API_KEY');
-
-                //get todo's
-                myOwnWs.sendData({
-                    'task': 'SelectTodos',
-                    'content': 'test90'
-                }, function(data) {
-                    console.log(data);
-                });
-          .tab.obc
-            pre.language-javascript
-              code.
-                //objective-c code
-                var ws = new Whitespell('YOUR_API_KEY');
-
-                //get todo's
-                myOwnWs.sendData({
-                    'task': 'SelectTodos',
-                    'content': 'test90'
-                }, function(data) {
-                    console.log(data);
-                });
-          .tab.java
-            pre.language-java
-              code.
-                //objective-c code
-                Whitespell ws = new Whitespell('YOUR_API_KEY');
-
-                //get todo's
-                myOwnWs.sendData({
-                    'task': 'SelectTodos',
-                    'content': 'test90'
-                }, function(data) {
-                    console.log(data);
-                });
-          .tab.bash
-            pre.language-bash
-              code.
-                curl https://api.whitespell.com/insert_todo \
-                -X POST \
-                -H 'Content-Type:application/json' \
-                -u 'API_KEY' \
-                -d '{"content":"Do Groceries"}'
-
-    article.column.half.clear-r
-      h4.alt #2 Using one
-      :markdown
-        Now we have our prepaired statement set up we can **interact with it using either the command line or one
-        of the many client side libraries**.
-
-        What happens here is that a request is performed to a CDN. By getting the data of a CDN we get a
-        huge performace gain. The code you see here got data back in under 5ms!
-
-section.section.centered
-  article.column.half.clear-l
-    .button-set
-      a(href="features.html").btn.alt More Features
-      span or
-      a(href="#").btn Sign up
-
-include ./inc/footer.jade
+      .button-set
+        a(href="features.html").btn.alt More Features
+        span or
+        a(href="#").btn Sign up

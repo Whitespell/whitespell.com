@@ -2,12 +2,33 @@ doctype
 <html lang='en'>
 head
   meta(charset='UTF-8')
-  title Whitespell - Your new superpowered workflow
+
+  block pageVars
+  - var prettyPageTitle = pageTitle !== '' ? pageTitle+' | Whitespell, Worlds first intelligent & distributed API' : 'Whitespell, Worlds first intelligent & distributed API'
+  title #{prettyPageTitle}
 
   meta(name='viewport', content='width=device-width; initial-scale=1.0; user-scalable=no')
-  meta(name='description', content='Your new superpowered workflow')
+
+  meta(name='description', content='#{pageDescription}')
   meta(name='author', content='Whitespell llc')
   meta(name='follow', content='index, follow')
+
+  meta(property="og:site_name", content="Whitespell")
+  meta(property="og:locale", content="nl_NL")
+  meta(property="og:type", content="website")
+  meta(property="og:description", content="#{pageDescription}")
+  meta(property="og:url", content="http://www.whitespell.com")
+  meta(property="og:title", content="#{prettyPageTitle}")
+  meta(property="og:image", content="http://whitespell.com/assets/img/whitespell-og.png")
+
+  meta(property="fb:app_id" content="874882852535587")
+
+  meta(name="twitter:card" content="summary")
+  meta(name="twitter:site" content="@whitespell")
+  meta(name="twitter:url" content="http://www.whitespell.com")
+  meta(name="twitter:title" content="#{prettyPageTitle}")
+  meta(name="twitter:description" content="#{pageDescription}")
+  meta(name="twitter:image" content="http://whitespell.com/assets/img/whitespell-og.png")
 
   link(rel='shortcut icon', href='/assets/favicons/favicon.ico')
   link(rel='apple-touch-icon', sizes='57x57', href='/assets/favicons/apple-touch-icon-57x57.png')
@@ -43,14 +64,17 @@ header#header
         img(src='assets/img/whitespell-logo-white.svg', alt='Whitespell Logo')
     nav#main-nav.hidden
       ul.inline
-        a(href='/features.html')
-          li Features
-        a(href='/pricing.html')
-          li Pricing
-        a(href='/docs.html')
-          li Documentation
-        a(href='/contact.html')
-          li Contact
+        each name, href in {"features.html":"Features", "pricing.html":"Pricing", "#":"Documentation", "contact.html":"Contact"}
+          if pageTitle === name || (pageTitle === '' && name === 'Home') ? 'active' : ''
+            a(href="/#{href}").active
+              li= name
+          else
+            a(href="/#{href}")
+              li= name
         li
           a(href='/sign-in.html') Log in
           a(href='/sign-in.html').btn Sign up
+
+block pageContent
+
+include footer
