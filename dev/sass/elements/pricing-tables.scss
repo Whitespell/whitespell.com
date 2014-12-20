@@ -38,7 +38,7 @@
 
 	header, .content {
 		padding: $padding-l;
-		overflow: hidden;
+		//overflow: hidden;
 	}
 
 	header {
@@ -62,9 +62,58 @@
 	}
 
 	ul {
-		overflow: hidden;
+		overflow: visible;
 		text-align: left;
 		padding-left: 0;
+
+		a {
+			color: $base-color;
+			cursor: pointer;
+			@include border(bottom);
+
+			position: relative;
+
+			&:hover {
+				&:before,&:after {
+					display: block;
+				}
+			}
+
+			&:before,&:after {
+				position: absolute;
+				display: none;
+			}
+
+			&:before {
+				width: 217px;
+
+				cursor: auto;
+				content: attr(data-tooltip);
+
+				color: $white;
+				background-color: rgba($base-color, .9);
+				border-radius: $border-radius;
+
+				padding: $padding-m;
+
+				left: -$margin-m;
+				bottom: $margin-m + 9px;
+			}
+
+			&:after {
+				content: '';
+				width: 0;
+				height: 0;
+
+				margin-right: -7px;
+				bottom: $margin-m + 2px;
+				right: 50%;
+
+				@include border(left, transparent, 7px);
+				@include border(right, transparent, 7px);
+				@include border(top, rgba($base-color, .9), 7px);
+			}
+		}
 
 		li:before {
 			display: none;

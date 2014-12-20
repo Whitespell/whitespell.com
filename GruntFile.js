@@ -54,6 +54,10 @@ module.exports = function (grunt){
     },
 
     sass: {
+        options: {
+          style: 'compressed',
+          sourcemap: 'none'
+        },
         dist: {
           files: {
             '<%= webRoot %>/css/main.css': '<%= devRoot %>/sass/main.scss'
