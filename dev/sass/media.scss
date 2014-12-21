@@ -1,0 +1,45 @@
+//ALL SMALLER DEVICES/SCREENS
+@include media($max-width: 1080px){
+
+	//FIFTY
+	.section.fifty article {
+		float: none;
+		width: 100%;
+
+		.container {
+			width: $main-container-width;
+		}
+	}
+
+}
+
+//SMALLER SCREENS
+@include media($main-container-width, 1080px){
+
+	//CONTAINER
+	.container {
+		width: 960px !important;
+	}
+
+}
+
+//TABLET
+@include media(768px, $main-container-width){
+	
+	//CONTAINER
+	.container {
+		width: 758px !important;
+	}
+
+	//HOME
+	.home-intro {
+		.content {
+			width: 55%;
+		}
+
+		.character-wrapper {
+			width: 40%;
+		}
+	}
+
+}

@@ -60,15 +60,6 @@
 				padding-right: $margin-m;
 			}
 
-			@include media($max-width: 1080px){
-				float: none;
-				width: 100%;
-
-				.container {
-					width: $main-container-width;
-				}
-			}
-
 		}
 	}
 
