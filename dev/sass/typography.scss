@@ -8,7 +8,7 @@
 	background: $accent;
 }
 
-p,img,ul,ol,pre {
+p,img,ul,ol,pre,iframe {
 	margin-bottom: $margin-m;
 }
 
@@ -44,7 +44,7 @@ h4,.h4 {
 	font-size: 1.8em;
 }
 
-h5,.h5,blockquote {
+h5,.h5 {
 	font-size: 1.4em;
 }
 

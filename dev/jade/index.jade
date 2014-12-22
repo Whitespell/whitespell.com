@@ -72,17 +72,17 @@ block pageContent
           b the way it works in its most basic form.
           |  Lets create a little script that allows us to insert todos into the database.
 
-    section.section
-      article.column.half.clear-l
+    section.section.feature
+      article.column.half
         h4.alt #1 Creating a Prepaired Statement
-        p.no-clear
+        p
           | The part where Whitespell really starts to shine is with Prepared Statements. Think of prepared statements as
           | dynamic SQL queries. They are 
           b simple to write but very powerfull and secure. 
           | They think intelligently about your data and the requests you perform to them and optimise your database accordingly. 
           b Lets create one using the CLI.
 
-      article.column.half.clear-r
+      article.column.half
         pre.language-bash
           code.
             whitespell todo_app ps:new
@@ -92,8 +92,17 @@ block pageContent
 
             &#10003; Prepared Statement 'insert_todo' created
 
-    section.section
-      article.column.half.clear-l
+    section.section.feature.inverted
+      article.column.half
+        h4.alt #2 Using one
+        p.
+          Now we have our prepaired statement set up we can **interact with it using either the command line or one
+          of the many client side libraries**.
+        p.
+          What happens here is that a request is performed to a CDN. By getting the data of a CDN we get a
+          huge performace gain. The code you see here got data back in under 5ms!
+
+      article.column.half
         section.code-tabs
           nav
             a(data-tab-id="js").is-active JavaScript
@@ -162,15 +171,6 @@ block pageContent
                   -H 'Content-Type:application/json' \
                   -u 'API_KEY' \
                   -d '{"content":"Do Groceries"}'
-
-      article.column.half.clear-r
-        h4.alt #2 Using one
-        :markdown
-          Now we have our prepaired statement set up we can **interact with it using either the command line or one
-          of the many client side libraries**.
-
-          What happens here is that a request is performed to a CDN. By getting the data of a CDN we get a
-          huge performace gain. The code you see here got data back in under 5ms!
 
   section.section.centered
     article.column.half.clear-l

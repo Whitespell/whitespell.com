@@ -43,3 +43,196 @@
 	}
 
 }
+
+//MOBILE
+@include media($max-width: 768px){
+	
+	//CONTAINER
+	.container {
+		width: 90% !important;
+	}
+
+	//COLUMNS
+	.column {
+
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+
+		&.half, &.one-third, &.two-third {
+			@include column(12);
+		}
+
+		&.centered.mobile-left {
+			text-align: left;
+		}
+
+	}
+
+	//TYPOGRAPHY
+	h1,.h1 {
+		font-size: 2.8em;
+	}
+
+	h2,.h2 {
+		font-size: 2.4em;
+	}
+
+	h3,.h3 {
+		font-size: 2em;
+	}
+
+	h4,.h4 {
+		font-size: 1.6em;
+	}
+
+	h5,.h5 {
+		font-size: 1.2em;
+	}
+
+	h6,.h6 {
+		font-size: 1.1em;
+	}
+
+	//SECTIONS
+	section.section {
+		margin-bottom: $margin-xl-mobile;
+
+		.illustration {
+			top: 280px;
+		}
+
+		&.page-title, &.accent, &.accent-alt, &.fifty article:nth-child(1),&.fifty article:last-child {
+			padding-top: $margin-xl-mobile;
+
+			.container:after {
+				height: $margin-xl-mobile;
+			}
+		}
+
+		&.page-title {
+			padding-top: $margin-l;
+
+			.illustration {
+				font-size: 80px;
+				right: $margin-m;
+			}
+		}
+	}
+
+	//HEADER
+	header#header {
+
+		nav {
+			width: 200px;
+
+			position: fixed;
+			top: 0;
+			right: -200px;
+			bottom: 0;
+			margin-top: 0;
+
+			background-color: $accent-dark;
+
+			@include transition(right);
+
+			ul {
+				a.is-active li {
+					background-color: $accent-hover;
+				}
+
+				li {
+					display: block;
+					padding: $padding-l;
+					margin-right: 0;
+
+					&.login-btns {
+						padding-right: 0;
+
+						a.btn {
+							background-color: $accent-dark;
+							border-color: $accent;
+						}
+					}
+				}
+			}
+
+		}
+
+		#sidebar-trigger {
+			display: block;
+			float: right;
+			margin-top: 4px;
+		}
+
+	}
+
+	body, header#header {
+		@include transition(margin-left);
+	}
+
+	body.sidebar-open {
+		margin-left: -200px;
+		header#header {
+			margin-left: -200px;
+
+			nav {
+				right: 0;
+			}
+		}
+	}
+
+	//FOOTER
+	footer#footer {
+		width: 100%;
+
+		ul {
+			width: 100%;
+			overflow: hidden;
+
+			font-size: $size-m * 0.8;
+			float: none;
+
+			&:last-child {
+				padding-top: $margin-s;
+			}
+		}
+	}
+
+	//HOME
+	.home-intro {
+		.character-wrapper {
+			margin-bottom: -$margin-s;
+			.character {
+				width: 70%;
+				margin: 0 auto;
+
+				img {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.content {
+			margin-top: 0;
+		}
+	}
+
+	//FEATURES
+	.feature {
+		article {
+			&:nth-child(2){
+				float: none;
+			}
+		}
+
+		&.inverted article {
+			&:nth-child(1){
+				float: none;
+			}
+			&:nth-child(2){
+				float: none;
+			}
+		}
+	}
+
+}

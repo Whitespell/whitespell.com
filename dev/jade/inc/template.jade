@@ -62,18 +62,19 @@ header#header
     a(href="/")
       h1#logo
         img(src="assets/img/whitespell-logo-white.svg", alt="Whitespell Logo")
-    nav#main-nav.hidden
+    nav
       ul.inline
         each name, href in {"features.html":"Features", "pricing.html":"Pricing", "#":"Documentation", "contact.html":"Contact"}
-          if pageTitle === name || (pageTitle === '' && href === '/') ? 'active' : ''
-            a(href="/#{href}").active
+          if pageTitle === name || (pageTitle === '' && href === '/')
+            a(href="/#{href}").is-active
               li= name
           else
             a(href="/#{href}")
               li= name
-        li
+        li.login-btns
           a(href='/sign-in.html') Log in
           a(href='/sign-in.html').btn Sign up
+    a.btn#sidebar-trigger Menu
 
 block pageContent
 

@@ -2,6 +2,18 @@
 
   'use strict';
 
+  //Navigation
+  (function(){
+  
+    var Bbody = B(document.body);
+
+    B('#sidebar-trigger').click(function(e){
+      e.preventDefault();
+      Bbody.toggleClass('sidebar-open');
+    });
+  
+  }());
+
   //Code tabs
   B('.code-tabs').each(function(el){
 
