@@ -3,16 +3,22 @@
 
     position: relative;
 
-    nav a {
+    nav {
+      a {
         color: $base-color;
         cursor: pointer;
 
         font-size: $size-s;
-        padding: $padding-m;
+
+        //display: inline-block;
+        padding-bottom: $margin-s;
+        padding-right: $margin-m/2;
+        padding-left: $margin-m/2;
 
         &.is-active {
             font-weight: $bold-weight;
         }
+      }
     }
 
     .tab {

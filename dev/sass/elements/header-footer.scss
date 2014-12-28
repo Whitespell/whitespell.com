@@ -1,6 +1,6 @@
 #header-bg {
 	width: 100%;
-	height: 89px;
+	height: 87px;
 	overflow: hidden;
 }
 
@@ -10,7 +10,7 @@ header#header {
 
 	background-color: $accent;
 	color: $white;
-	@include border(bottom, $accent-dark, $border-width-alt);
+	//@include border(bottom, $accent-dark, $border-width-alt);
 
 	position: fixed;
 	top: 0;
@@ -43,6 +43,9 @@ header#header {
 			li {
 				margin-right: $margin-l;
 
+				@include border(bottom, $accent);
+				padding-bottom: 5px;
+
 				&.active {
 					font-weight: $bold-weight;
 					color: $accent;
@@ -51,6 +54,10 @@ header#header {
 
 			a {
 				color: $white;
+
+				&.is-active li {
+					border-color: $grey;
+				}
 
 				&:last-child li {
 					margin: 0;
@@ -71,7 +78,7 @@ footer#footer {
 	@include border(top);
 
 	a {
-		color: $accent-alt;
+		color: $base-color;
 	}
 
 	ul {
