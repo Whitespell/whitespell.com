@@ -25,7 +25,7 @@
 
 //TABLET
 @include media(768px, $main-container-width){
-	
+
 	//CONTAINER
 	.container {
 		width: 758px !important;
@@ -46,7 +46,7 @@
 
 //MOBILE
 @include media($max-width: 768px){
-	
+
 	//CONTAINER
 	.container {
 		width: 90% !important;
@@ -93,6 +93,11 @@
 		font-size: 1.1em;
 	}
 
+	//BUTTONS
+	.button-set {
+		font-size: $size-m;
+	}
+
 	//SECTIONS
 	section.section {
 		margin-bottom: $margin-xl-mobile;
@@ -120,7 +125,22 @@
 	}
 
 	//HEADER
+	#header-bg {
+		height: 82px;
+	}
+
 	header#header {
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.container > a {
+			line-height: 0;
+			h1 {
+				width: 60px;
+				padding-top: $margin-m;
+				padding-bottom: $margin-m;
+			}
+		}
 
 		nav {
 			width: 200px;
@@ -129,6 +149,7 @@
 			top: 0;
 			right: -200px;
 			bottom: 0;
+
 			margin-top: 0;
 
 			background-color: $accent-dark;
@@ -159,9 +180,18 @@
 		}
 
 		#sidebar-trigger {
+			padding: $padding-m;
+			padding-top: 28px;
+			padding-bottom: $margin-m;
+
+			line-height: $line-height;
+			color: $white;
+
+			cursor: pointer;
 			display: block;
+
 			float: right;
-			margin-top: 4px;
+			margin-top: 2px;
 		}
 
 	}
