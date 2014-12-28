@@ -78,7 +78,11 @@ footer#footer {
 	@include border(top);
 
 	a {
-		color: $base-color;
+		color: $grey-dark;
+
+		&:hover {
+			color: $base-color;
+		}
 	}
 
 	ul {
