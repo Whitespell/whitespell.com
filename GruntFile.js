@@ -37,16 +37,25 @@ module.exports = function (grunt){
     },
 
     jade: {
-      compile: {
-        options: {
-          data: {
-            debug: false
-          }
-        },
+      options: {
+        data: {
+          debug: false
+        }
+      },
+      root: {
         files: [{
           cwd: '<%= devRoot %>/jade',
           src: '*.jade',
           dest: '<%= webRoot %>',
+          ext: '.html',
+          expand: true
+        }]
+      },
+      docs: {
+        files: [{
+          cwd: '<%= devRoot %>/jade/docs',
+          src: '*.jade',
+          dest: '<%= webRoot %>/docs',
           ext: '.html',
           expand: true
         }]

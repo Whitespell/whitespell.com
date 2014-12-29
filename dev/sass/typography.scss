@@ -53,8 +53,9 @@ h6,.h6 {
 }
 
 a {
-	color: $accent;
+	color: $base-color;
 	text-decoration: none;
+	@include border(bottom);
 }
 
 :not(pre) > code[class*="language-"],
@@ -69,7 +70,7 @@ pre[class*="language-"] {
 }
 
 b,strong {
-	font-weight: 500;
+	font-weight: $bold-weight;
 }
 
 cite {
@@ -96,18 +97,6 @@ ul, ol {
 
 		&:last-child {
 			margin-bottom: 0;
-		}
-	}
-
-	> ul,ol {
-		li {
-			padding-left: $margin-m;
-			@include border(left);
-
-			&.active {
-				color: $accent-alt;
-				border-color: $accent-alt;
-			}
 		}
 	}
 

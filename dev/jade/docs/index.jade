@@ -1,0 +1,41 @@
+extends ../inc/template
+
+block pageVars
+  - var pageTitle = "Documentation"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  include ./inc/sidebar
+
+  .content
+    section.section.page-title
+      .container
+        h2 Documentation
+        h3.h4 Learn how to use Whitespell
+        article.column.half.clear-l
+          p
+            b
+              a(href="#") Get started in 5 minutes
+            |  or have a look at 
+            b
+              a(href="#") how Whitespell works
+        .illustration
+          span.ss-icon.ss-standard cloud
+
+    section.section.language-picker
+      .container
+        h3 Quickstart
+        h4.h5.alt What platform are you coding for?
+        a(href="#").column.one-fourth
+          div.ss-icon.ss-standard globe
+          span Web / JavaScript
+        a(href="#").column.one-fourth
+          div.devicons.devicons-android
+          span Android / Java
+        a(href="#").column.one-fourth
+          div.devicons.devicons-apple
+          span iOS / Swift
+        a(href="#").column.one-fourth
+          div.devicons.devicons-terminal_badge
+          span REST
+

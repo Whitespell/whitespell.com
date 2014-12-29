@@ -147,17 +147,9 @@
 		}
 
 		nav {
-			width: 200px;
+			@include sidebar;
 
-			position: fixed;
-			top: 0;
 			right: -200px;
-			bottom: 0;
-
-			margin-top: 0;
-
-			background-color: $base-color-dark;
-
 			@include transition(right);
 
 			ul {
@@ -182,7 +174,6 @@
 					}
 				}
 			}
-
 		}
 
 		#sidebar-trigger {

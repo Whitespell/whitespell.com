@@ -1,0 +1,7 @@
+@include media($max-width: 1520px){
+
+	.content, footer#footer {
+		padding-left: 250px;
+	}
+
+}

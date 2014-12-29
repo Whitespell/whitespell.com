@@ -80,20 +80,27 @@
 			float: left;
 		}
 
-		a.btn {
-			background-color: $accent-hover;
+		a {
+			@include border(bottom, $grey);
 
-			&:hover {
-				background-color: $accent-dark;
-			}
-
-			&.alt {
-				background-color: $accent-alt-hover;
+			&.btn {
+				background-color: $accent-hover;
+				border-color: $accent-dark;
 
 				&:hover {
-					background-color: $accent-alt-dark;
+					background-color: $accent-dark;
+				}
+
+				&.alt {
+					background-color: $accent-alt-hover;
+					border-color: $accent-alt-dark;
+
+					&:hover {
+						background-color: $accent-alt-dark;
+					}
 				}
 			}
+
 		}
 	}
 

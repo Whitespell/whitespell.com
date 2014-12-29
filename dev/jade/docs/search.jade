@@ -1,0 +1,53 @@
+extends ../inc/template
+
+block pageVars
+  - var pageTitle = "Documentation"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  include ./inc/sidebar
+
+  .content
+    section.section.page-title
+      .container
+        h2 Search Results
+        h3.h4 4 results
+        article.column.half.clear-l
+          p Showing all 4 results for "new Whitespell"
+        .illustration
+          span.ss-icon.ss-standard cloud
+
+    section.section.search
+      .container
+        header
+          input(type="search", placeholder="Search the docs...", value="new Whitespell")
+        section.results
+          a(href="#")
+            h5 Getting Started
+            p after your imported the script you use 
+              b  new Whitespell()
+              |  to...
+            small
+              span.ss-icon.ss-standard openbook
+              | whitespell.com/web/getting-started
+          a(href="#")
+            h5 new Whitespell()
+            p The constructor constructs a
+              b  new Whitespell
+              |  instance...
+            small
+              span.ss-icon.ss-standard globe
+              | whitespell.com/web/api/constructor
+          a(href="#")
+            h5 new Whitespell()
+            p When invoking the constructor an new instance of the Whitespell...
+            small
+              span.devicons.devicons-apple
+              | whitespell.com/ios/api/constructor
+          a(href="#")
+            h5 new Whitespell()
+            p Using the new keyword in combination with the Whitespell datatype will...
+            small
+              span.devicons.devicons-android
+              | whitespell.com/android/api/constructor
+
