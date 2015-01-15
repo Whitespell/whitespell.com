@@ -1,10 +1,7 @@
 #header-bg {
 	width: 100%;
-	height: 89px;
+	height: $header-height-desktop;
 	overflow: hidden;
-
-	background-color: $accent;
-	@include border(bottom, $accent-dark, $border-width-alt);
 }
 
 header#header {
@@ -13,7 +10,7 @@ header#header {
 
 	background-color: $accent;
 	color: $white;
-	@include border(bottom, $accent-dark, $border-width-alt);
+	//@include border(bottom, $accent-dark, $border-width-alt);
 
 	position: fixed;
 	top: 0;
@@ -36,15 +33,18 @@ header#header {
 		margin-top: 4px;
 		float: right;
 
-		.btn {
-			margin-left: $margin-s;
-		}
-
 		ul {
 			margin: 0;
 
 			li {
 				margin-right: $margin-l;
+
+				@include border(bottom, $accent);
+				padding-bottom: 5px;
+
+				&.login-btns {
+					margin-right: 0;
+				}
 
 				&.active {
 					font-weight: $bold-weight;
@@ -54,6 +54,16 @@ header#header {
 
 			a {
 				color: $white;
+				border: none;
+
+				&.btn {
+					@include border($color: $accent-dark);
+					margin-left: $margin-s;
+				}
+
+				&.is-active li {
+					border-color: $grey;
+				}
 
 				&:last-child li {
 					margin: 0;
@@ -74,7 +84,12 @@ footer#footer {
 	@include border(top);
 
 	a {
-		color: $accent-alt;
+		color: $grey-dark;
+		border: none;
+
+		&:hover {
+			color: $base-color;
+		}
 	}
 
 	ul {

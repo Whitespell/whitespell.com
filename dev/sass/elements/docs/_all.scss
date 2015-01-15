@@ -1,0 +1,10 @@
+body.docs {
+	@import "sidebar";
+
+	.content {
+		@import "language-picker";
+		@import "search";
+	}
+
+	@import "media"
+}
