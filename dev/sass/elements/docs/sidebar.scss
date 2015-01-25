@@ -47,6 +47,14 @@
 					}
 				}
 
+				&.read-more {
+					font-size: $size-s;
+
+					.ss-icon {
+						top: 3px;
+					}
+				}
+
 			}
 
 			&.sub-menu {

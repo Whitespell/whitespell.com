@@ -1,0 +1,42 @@
+.list-boxes {
+
+	article {
+		@include border();
+		margin-bottom: $margin-m;
+
+		header {
+			@include border(bottom);
+
+			padding: $padding-m;
+
+			span {
+				display: inline-block;
+				margin-right: $margin-s;
+
+				position: relative;
+				top: 3px;
+
+				&.devicons {
+					font-size: 1.1em;
+					top: 2px;
+				}
+			}
+		}
+
+		.content {
+			padding: $padding-m;
+			
+			ul {
+				margin-top: 0;
+				margin-bottom: 0;
+
+				li {
+					margin-bottom: $margin-s;
+				}
+			}
+
+		}
+
+	}
+
+}

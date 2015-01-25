@@ -1,11 +1,34 @@
 .sidebar
     header
-      input(type="search", placeholder="Search the docs...")
+      form(action="search.html", method="get")
+        input(type="search", name="q" placeholder="Search the docs...")
     ul
       a(href="/docs/")
         li.is-active Documentation Home
+      
       a(href="#")
-        li CLI Reference
+        li.title
+          span.ss-icon.ss-standard book
+          | Learning
+        ul.sub-menu
+          a(href="#")
+            li Outsourcing Processes
+          a(href="#")
+            li Creating prepaired statements
+          a(href="#")
+            li Initializing a new app
+          a(href="#").read-more
+            li
+              span.ss-icon.ss-standard ellipsis
+              | More Articles
+
+      a(href="#")
+        li.title.devicons.devicons-terminal_badge CLI
+      ul.sub-menu
+        a(href="#")
+          li Getting Started
+        a(href="#")
+          li Manual
 
       a(href="#")
         li.title
