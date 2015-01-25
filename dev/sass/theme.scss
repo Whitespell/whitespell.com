@@ -26,3 +26,16 @@ img, iframe {
 .no-clear {
 	margin-bottom: 0 !important;
 }
+
+span.ss-icon, span.devicons {
+	display: inline-block;
+	margin-right: $margin-s;
+
+	position: relative;
+	top: 3px;
+}
+
+span.devicons {
+	font-size: 1.1em;
+	top: 2px;
+}

@@ -1,0 +1,60 @@
+extends ../inc/template
+
+block pageVars
+  - var pageTitle = "Documentation"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  include ./inc/sidebar
+
+  .content
+    section.section.page-title
+      .container
+        h2 API Reference
+        p Web / JavaScript
+        .illustration
+          span.ss-icon.ss-standard cloud
+
+    section.section.overview-list.api-ref
+      a(href="article-api.html")
+        article
+          .container
+            h4.h5 
+              code
+                | new Whitespell()
+                span new Whitespell(apiUrl)
+            p Contructs a new instance of the Whitespell class
+      a(href="article-api.html")
+        article
+          .container
+            h4.h5
+              code 
+                | Whitespell.req()
+                span Whitespell.req(task[, params][, callback][, useCors])
+            p Request the given task to trigger
+      a(href="article-api.html")
+        article
+          .container
+            h4.h5 
+              code 
+                | Whitespell.on()
+                span Whitespell.on(task, callback)
+            p Listen for the triggering of the given task on other clients
+      a(href="article-api.html")
+        article
+          .container
+            h4.h5
+              code
+                | Whitespell.off()
+                span Whitespell.off(task, callback)
+            p Remove the listener that was set for the given task
+      a(href="article-api.html")
+        article
+          .container
+            h4.h5
+              code
+                | Whitespell.outsource()
+                span Whitespell.outsource(func, callback)
+            p Outsource the given function to run on the Whitespell server
+      
+

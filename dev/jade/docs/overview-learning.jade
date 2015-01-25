@@ -1,0 +1,66 @@
+extends ../inc/template
+
+block pageVars
+  - var pageTitle = "Documentation"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  include ./inc/sidebar
+
+  .content
+    section.section.page-title
+      .container
+        h2 Learning
+        p Learn about things you can do with Whitespell
+        .illustration
+          span.ss-icon.ss-standard cloud
+
+    section.section.overview-list
+      article
+        .container
+          a(href="#")
+            h4 Outsourcing Processes To The Cloud
+          .meta
+
+            .photo(href="#")
+              img(src="http://www.placecage.com/30/30")
+            p
+              | Posted by 
+              a(href="#") Koen Vendrik
+              |  in 
+              a(href="#") Advanced
+      article
+        .container
+          a(href="#") 
+            h4 Creating Prepaired Statements
+          .meta
+            .photo
+              img(src="http://www.placecage.com/40/40")
+            p Posted by 
+              a(href="#") Pim de Witte
+              |  in 
+              a(href="#") Beginner
+      article
+        .container
+          a(href="#")
+            h4 Creating A New Application
+          .meta
+            .photo
+              img(src="http://www.placecage.com/50/50")
+            p Posted by 
+              a(href="#") Koen Vendrik
+              |  in 
+              a(href="#") Beginner
+      article
+        .container
+          a(href="#")
+            h4 Making The Most Of JavaScript WebWorkers
+          .meta
+            .photo
+              img(src="http://www.placecage.com/60/60")
+            p Posted by 
+              a(href="#") Koen Vendrik
+              |  in 
+              a(href="#") Advanced
+      
+

@@ -8,19 +8,6 @@
 			@include border(bottom);
 
 			padding: $padding-m;
-
-			span {
-				display: inline-block;
-				margin-right: $margin-s;
-
-				position: relative;
-				top: 3px;
-
-				&.devicons {
-					font-size: 1.1em;
-					top: 2px;
-				}
-			}
 		}
 
 		.content {

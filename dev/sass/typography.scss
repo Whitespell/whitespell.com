@@ -56,6 +56,17 @@ a {
 	color: $base-color;
 	text-decoration: none;
 	@include border(bottom);
+
+	@include transition(all);
+
+	&.no-border {
+		border: none;
+	}
+
+	&:hover {
+		color: $accent;
+		border-color: $accent;
+	}
 }
 
 :not(pre) > code[class*="language-"],
@@ -67,6 +78,22 @@ pre[class*="language-"] {
 	padding: $padding-l !important;
 
 	border-radius: $border-radius;
+}
+
+code {
+	font-family: $code-family;
+	font-size:  $size-s;
+}
+
+.data-type {
+	color: $grey-dark;
+	font-size: $size-s;
+	display: inline-block;
+	margin-left: $margin-s;
+}
+
+pre code {
+	font-size: 1em;
 }
 
 b,strong {
@@ -169,10 +196,6 @@ ul {
 	}
 
 	&.social {
-
-		a {
-			color: $base-color;
-		}
 
 		li .ss-icon {
 			font-size: 1.1em;

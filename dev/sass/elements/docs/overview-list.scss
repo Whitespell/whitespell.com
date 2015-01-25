@@ -1,0 +1,66 @@
+.overview-list {
+
+	a:nth-child(1) article, > article:nth-child(1) {
+		padding-top: 0;
+	}
+
+	a:last-child article, > article:last-child {
+		border: none;
+		padding-bottom: 0;
+	}
+
+	article {
+		padding-top: $margin-l;
+		padding-bottom: $margin-l;
+		@include border(bottom);
+
+		h4 {
+			color: $base-color;
+
+			@include transition(color);
+
+			span {
+				font-size: .6em;
+				color: $grey-dark;
+				display: inline-block;
+				margin-left: $margin-m;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+			color: $base-color;
+		}
+
+		.meta {
+
+			.photo {
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+				overflow: hidden;
+
+				margin-right: $margin-m;
+				float: left;
+
+				img {
+					width: 100%;
+					margin: 0;
+				}
+			}
+
+			p {
+				position: relative;
+				top: 1px;
+			}
+
+		}
+
+		&:hover {
+			h4 {
+				color: $accent;
+			}
+		}
+	}
+
+}

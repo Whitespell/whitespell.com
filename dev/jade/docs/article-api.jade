@@ -1,0 +1,72 @@
+extends ../inc/template
+
+block pageVars
+  - var pageTitle = "Documentation"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  include ./inc/sidebar
+
+  .content
+    section.section.page-title
+      .container
+        h2 Whitespell.req()
+        p Contructs a new instance of the Whitespell class
+        .illustration
+          span.ss-icon.ss-standard cloud
+
+    section.section.article-page
+      .container
+        h4 Arguments
+        article.column.half.clear-l
+          code task
+          span
+            em.data-type String
+          p The name of the task you'd like to trigger
+
+          code [params]
+          span
+            em.data-type Object
+          p List of parameters you'd like to send with your request
+
+        article.column.half.clear-r
+          code [callback]
+          span
+            em.data-type Function
+          p Function to invoke when the request is complete.
+
+          code [useCors]
+          span
+            em.data-type Boolean
+          p When true we'll use a regular CORS request instead of sockets
+
+
+    section.section.article-page
+      .container
+        h4 Return Value
+        code Whitespell
+        span
+            em.data-type Object
+        p A
+          code  Whitespell
+          |  reference for the specified location
+
+    section.section.article-page
+      .container
+        h4 Example
+        pre.language-javascript
+          code.
+            var ws = new Whitespell('https://kvendrik.whitespell.com');
+
+            ws.req('getTodoById', {
+              id: 18
+            }, function(res){
+              console.log(res);
+            });
+
+
+
+
+      
+      
+
