@@ -10,9 +10,7 @@
 	}
 
 	article {
-		padding-top: $margin-l;
-		padding-bottom: $margin-l;
-		@include border(bottom);
+		margin-bottom: $margin-xl;
 
 		h4 {
 			color: $base-color;
@@ -25,6 +23,10 @@
 				display: inline-block;
 				margin-left: $margin-m;
 			}
+
+			&:hover {
+				color: $accent;
+			}
 		}
 
 		p {
@@ -34,33 +36,34 @@
 
 		.meta {
 
-			.photo {
-				width: 30px;
-				height: 30px;
-				border-radius: 100%;
-				overflow: hidden;
-
-				margin-right: $margin-m;
-				float: left;
-
-				img {
-					width: 100%;
-					margin: 0;
-				}
-			}
-
 			p {
 				position: relative;
 				top: 1px;
 			}
 
 		}
-
-		&:hover {
-			h4 {
-				color: $accent;
-			}
-		}
 	}
 
+	.row:last-child article {
+		margin-bottom: 0;
+	}
+
+}
+
+.inline-photo {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	overflow: hidden;
+
+	margin-right: $margin-m;
+	float: left;
+
+	position: relative;
+	top: -2px;
+
+	img {
+		width: 100%;
+		margin: 0;
+	}
 }

@@ -7,10 +7,13 @@
       a {
         color: $base-color;
         cursor: pointer;
+        border: none;
 
         font-size: $size-s;
 
-        //display: inline-block;
+        transition: none;
+
+        display: inline-block;
         padding-bottom: $margin-s;
         padding-right: $margin-m/2;
         padding-left: $margin-m/2;

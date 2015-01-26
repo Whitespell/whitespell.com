@@ -78,6 +78,9 @@ pre[class*="language-"] {
 	padding: $padding-l !important;
 
 	border-radius: $border-radius;
+
+	margin-top: 0 !important;
+	margin-bottom: $margin-m !important;
 }
 
 code {
@@ -238,7 +241,7 @@ ol {
 			content: counter(numbering)'.';
 
 			font-size: $size-s;
-			color: $accent;
+			color: $base-color;
 
 			float: left;
 			margin-right: $size-s;

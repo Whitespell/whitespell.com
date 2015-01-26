@@ -1,0 +1,74 @@
+extends ../inc/template
+
+block pageVars
+  - var pageTitle = "Documentation"
+  - var pageDescription = "Worlds first intelligent & distributed API"
+
+block pageContent
+  include ./inc/sidebar
+
+  .content
+    section.section.page-title
+      .container
+        h2 Getting Started
+        p with Whitespell for Web in 3 minutes
+        .illustration
+          span.ss-icon.ss-standard cloud
+
+    section.section.feature
+      .container
+        article.column.half
+          h4.alt #1 Setup the CIO
+          p
+            | The CIO (which stands for Client I/O) is the telephone you use to call Whitespell.
+            | this means the first thing you need to do in order to start using Whitespell is import the script and
+            | intialize a new instance. 
+
+        article.column.half
+          pre.language-javascript
+            code.
+              var ws = new Whitespell('https://kvendrik.whitespell.com');
+
+    section.section.feature.inverted
+      .container
+        article.column.half
+          h4.alt #2 Create a Prepaired Statement
+          p Think of prepared statements as dynamic SQL queries. They are simple to write but very powerfull and secure. 
+          p They think intelligently about your data and the requests you perform to them and optimise your database accordingly. Lets create one.
+
+        article.column.half
+          pre.language-bash
+            code.
+              whitespell create todo_app
+              whitespell ps insert_todo --query="INSERT INTO todos (content) VALUES ('{content}')"
+
+              &#10003; Prepared Statement 'insert_todo' created
+
+    section.section.feature
+      .container
+        article.column.half
+          h4.alt #3 Use it
+          p 
+            | Now we have our prepaired statement set up we can interact with it using the CIO's
+            code  req 
+            | method.
+
+        article.column.half
+          pre.language-javascript
+            code.
+              ws.req('insert_todo', {
+                content: 'Do Groceries'
+              }, function(res){
+                //{ status: 200, success: true }
+              });
+
+    section.section.centered
+      article.column.half.clear-l
+        a(href="#").btn.alt View the API Reference
+
+
+
+
+      
+      
+
