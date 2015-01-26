@@ -2,6 +2,7 @@
 
 	article {
 		@include border();
+		border-radius: $border-radius;
 		margin-bottom: $margin-m;
 
 		header {
