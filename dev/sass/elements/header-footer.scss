@@ -72,8 +72,20 @@ header#header {
 		}
 	}
 
-	#sidebar-trigger {
+	a.ss-icon {
+		padding: $padding-m;
+		padding-top: 28px;
+		padding-bottom: $margin-m;
+
+		line-height: $line-height !important;
+		color: $white;
+
+		cursor: pointer;
 		display: none;
+
+		float: right;
+		margin-top: 2px;
+		border: none;
 	}
 }
 

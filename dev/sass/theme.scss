@@ -11,6 +11,11 @@ body {
 	font-weight: $main-weight;
 	color: $base-color;
 	background: $white;
+	position: relative;
+}
+
+body, header#header {
+	@include transition(margin-left);
 }
 
 .container {

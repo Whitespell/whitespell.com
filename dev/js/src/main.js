@@ -2,16 +2,16 @@
 
   'use strict';
 
+  var Bbody = B(document.body);
+
   //Navigation
   (function(){
-  
-    var Bbody = B(document.body);
 
     B('#sidebar-trigger').click(function(e){
       e.preventDefault();
       Bbody.toggleClass('sidebar-open');
     });
-  
+
   }());
 
   //Code tabs
@@ -36,5 +36,15 @@
     });
 
   });
+
+    //Docs navigation
+    (function(){
+        var el = document.getElementById('docs-sidebar-trigger');
+        if(!el) return;
+
+        B(el).click(function(){
+            Bbody.toggleClass('docs-sidebar-open');
+        });
+    }());
 
 }());

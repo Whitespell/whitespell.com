@@ -48,6 +48,10 @@
 		margin-bottom: 0;
 	}
 
+	> a:last-child article, > :not(a) article:last-child {
+		margin-bottom: 0;
+	}
+
 }
 
 .inline-photo {

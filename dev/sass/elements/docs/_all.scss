@@ -1,6 +1,10 @@
 body.docs {
 	@import "sidebar";
 
+    #docs-sidebar-trigger {
+        display: none;
+    }
+
 	.content {
 		@import "language-picker";
 		@import "list-boxes";
@@ -9,5 +13,5 @@ body.docs {
 		@import "readable-article";
 	}
 
-	@import "media"
+	@import "media";
 }

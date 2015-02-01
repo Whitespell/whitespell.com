@@ -64,6 +64,10 @@
 			@include column(12);
 		}
 
+		&.one-fourth {
+			@include column(6);
+		}
+
 		&.centered.mobile-left {
 			text-align: left;
 		}
@@ -176,25 +180,10 @@
 			}
 		}
 
-		#sidebar-trigger {
-			padding: $padding-m;
-			padding-top: 28px;
-			padding-bottom: $margin-m;
-
-			line-height: $line-height;
-			color: $white;
-
-			cursor: pointer;
+		a.ss-icon#sidebar-trigger {
 			display: block;
-
-			float: right;
-			margin-top: 2px;
 		}
 
-	}
-
-	body, header#header {
-		@include transition(margin-left);
 	}
 
 	body.sidebar-open {

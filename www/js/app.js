@@ -188,16 +188,16 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
 
   'use strict';
 
+  var Bbody = B(document.body);
+
   //Navigation
   (function(){
-  
-    var Bbody = B(document.body);
 
     B('#sidebar-trigger').click(function(e){
       e.preventDefault();
       Bbody.toggleClass('sidebar-open');
     });
-  
+
   }());
 
   //Code tabs
@@ -222,5 +222,15 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
     });
 
   });
+
+    //Docs navigation
+    (function(){
+        var el = document.getElementById('docs-sidebar-trigger');
+        if(!el) return;
+
+        B(el).click(function(){
+            Bbody.toggleClass('docs-sidebar-open');
+        });
+    }());
 
 }());
